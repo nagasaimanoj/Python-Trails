@@ -24,7 +24,9 @@ plt.scatter(height, weight)
 #generating weight values based on our formula and heights
 predicted_values = [reg.coef_ * i + reg.intercept_ for i in height]
 
+#plotting a line based on original height and calculated weight
 plt.plot(height, predicted_values, 'b')
 plt.show()
 
+#predecting weight for random height 8.0
 print(reg.predict(X=8.0))
