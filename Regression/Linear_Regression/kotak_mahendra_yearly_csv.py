@@ -17,8 +17,9 @@ y_data = np.array(csv_data[..., 1:], dtype=float).T[0]
 regr = linear_model.LinearRegression()
 regr.fit(x_data, y_data)
 
-# plotting a scatter graph using existing data
+# plotting a graph using existing data
 plt.scatter(x_data, y_data)
+plt.plot(x_data, y_data)
 
 # adding 5 years to our date variable for predectiion
 x_data = np.array(np.append(x_data, np.arange(
@@ -26,7 +27,7 @@ x_data = np.array(np.append(x_data, np.arange(
 
 x_data.shape = (len(x_data), 1)
 
-# plotting a line graph using predected data
+# plotting a graph using predected data
 plt.scatter(x_data, regr.predict(x_data))
 plt.plot(x_data, regr.predict(x_data))
 plt.show()
