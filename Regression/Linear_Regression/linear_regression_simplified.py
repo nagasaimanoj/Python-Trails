@@ -16,5 +16,6 @@ plt.scatter(height, weight)
 plt.plot(height, weight)
 
 # plotting a line based on original heights and predicted weights
+plt.scatter(height, reg.predict(height))
 plt.plot(height, reg.predict(height))
 plt.show()
