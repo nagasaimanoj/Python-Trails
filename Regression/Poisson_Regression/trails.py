@@ -15,7 +15,6 @@ import pymc3 as pm
 import theano as thno
 import theano.tensor as T
 
-
 sns.set(style="darkgrid", palette="muted")
 pd.set_option('display.mpl_style', 'default')
 plt.rcParams['figure.figsize'] = 14, 6
