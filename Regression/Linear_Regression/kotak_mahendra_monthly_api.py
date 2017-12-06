@@ -30,8 +30,7 @@ x_data_2.shape = (len(x_data_2), 1)
 regr = linear_model.LinearRegression()
 regr.fit(x_data_2, y_data)
 
-plt.scatter(x_data_2, y_data)
+plt.plot(x_data_2, y_data, marker='o')
 
-plt.scatter(x_data_2, regr.predict(x_data_2))
-plt.plot(x_data_2, regr.predict(x_data_2))
+plt.plot(x_data_2, regr.predict(x_data_2), marker='o')
 plt.show()

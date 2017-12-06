@@ -12,10 +12,8 @@ reg = linear_model.LinearRegression()
 reg.fit(height, weight)
 
 # plotting scatter & line graphs using our original data
-plt.scatter(height, weight)
-plt.plot(height, weight)
+plt.plot(height, weight, marker='o')
 
 # plotting a line based on original heights and predicted weights
-plt.scatter(height, reg.predict(height))
-plt.plot(height, reg.predict(height))
+plt.plot(height, reg.predict(height), marker='o')
 plt.show()

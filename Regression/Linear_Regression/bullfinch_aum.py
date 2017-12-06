@@ -7,11 +7,9 @@ aum_per_year = [0, 0, 0, 5166063.898, 404537126.8, 3322383541]
 reg = linear_model.LinearRegression()
 reg.fit(years, aum_per_year)
 
-plt.scatter(years, aum_per_year)
-plt.plot(years, aum_per_year)
+plt.plot(years, aum_per_year, marker='o')
 
 years += [[2018], [2019], [2020]]
 
-plt.scatter(years, reg.predict(years))
-plt.plot(years, reg.predict(years))
+plt.plot(years, reg.predict(years), marker='o')
 plt.show()

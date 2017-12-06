@@ -13,6 +13,5 @@ for i in range(1, 6):
     years += next_year
     aum_per_year += list(reg.predict(next_year))
 
-plt.scatter(years, aum_per_year)
-plt.plot(years, aum_per_year)
+plt.plot(years, aum_per_year, marker='o')
 plt.show()

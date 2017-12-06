@@ -14,7 +14,6 @@ for x in csv_data:
     x_data.append(x[0])
     y_data.append(x[1])
 
-plt.scatter(x_data, y_data)
-plt.plot(x_data, y_data)
+plt.plot(x_data, y_data, marker='o')
 
 plt.show()

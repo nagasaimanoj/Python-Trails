@@ -25,13 +25,10 @@ plt.plot(goal_number, predicted_data[:, 0],
 plt.plot(goal_number, predicted_data[:, 1],
          marker='o', label="Away", color='#1e88e5')
 
-leg = plt.legend(loc='upper right', fontsize=13, ncol=2)
-leg.set_title("Poisson          Actual       ",
-              prop={'size': '14'})
-
+plt.title("Number of Goals per Match", size=15, fontweight='bold')
 plt.xlabel("Goals per Match")
 plt.ylabel("Goal Probability")
-
-plt.title("Number of Goals per Match", size=15, fontweight='bold')
+plt.legend(loc='upper right', fontsize=13, ncol=2).set_title(
+    "Poisson          Actual       ", prop={'size': '14'})
 
 plt.show()
