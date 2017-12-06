@@ -26,7 +26,7 @@ plt.plot(goal_number, predicted_data[:, 1],
          marker='o', label="Away", color='#1e88e5')
 
 leg = plt.legend(loc='upper right', fontsize=13, ncol=2)
-leg.set_title("Poisson           Actual        ",
+leg.set_title("Poisson          Actual       ",
               prop={'size': '14'})
 
 plt.xlabel("Goals per Match")
