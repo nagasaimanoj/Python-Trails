@@ -20,10 +20,11 @@ regr.fit(x_data, y_data)
 # plotting a graph using existing data
 plt.plot(x_data, y_data, marker='o')
 
-# adding 5 years to our date variable for predectiion
+# adding 5 years to our date variable to use for predection
 x_data = np.array(np.append(x_data, np.arange(
     max(x_data) + 1, max(x_data) + 6)))
 
+# transposing (1, len) array to (len, 1) array
 x_data.shape = (len(x_data), 1)
 
 # plotting a graph using predected data
