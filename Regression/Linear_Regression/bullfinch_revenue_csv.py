@@ -1,6 +1,5 @@
 import csv
 import matplotlib.pyplot as plt
-from sklearn import linear_model
 import numpy as np
 
 csv_file = open("C:\\Users\\saimanoj\\Downloads\\revenue.csv")
