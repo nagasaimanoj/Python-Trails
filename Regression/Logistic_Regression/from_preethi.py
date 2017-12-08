@@ -16,38 +16,24 @@ logit1 = LogisticRegression()
 logit1.fit(inputData, outputData)
 logit1.score(inputData, outputData)
 
-# True positive
 trueInput = Diabetes.ix[Diabetes['Outcome'] == 1].iloc[:, :8]
 trueOutput = Diabetes.ix[Diabetes['Outcome'] == 1].iloc[:, 8]
 
-# True positive rate
 np.mean(logit1.predict(trueInput) == trueOutput)
 
-# True negative
 falseInput = Diabetes.ix[Diabetes['Outcome'] == 0].iloc[:, :8]
 falseOutput = Diabetes.ix[Diabetes['Outcome'] == 0].iloc[:, 8]
 
-# True negative rate
 np.mean(logit1.predict(falseInput) == falseOutput)
 
 confusion_matrix(logit1.predict(inputData), outputData)
-# Computing false and true positive rates
+
 fpr, tpr, _ = roc_curve(logit1.predict(inputData),
                         outputData, drop_intermediate=False)
 
-plt.figure()
-# Adding the ROC
-plt.plot(fpr, tpr, color='red',
-         lw=2, label='ROC curve')
-# Random FPR and TPR
-plt.plot([0, 1], [0, 1], color='blue', lw=2, linestyle='--')
-##Title and label
-plt.xlabel('FPR')
-plt.ylabel('TPR')
-plt.title('ROC curve')
+plt.plot(fpr, tpr)
+
+plt.plot([0, 1], [0, 1])
 plt.show()
 
-roc_auc_score(logit1.predict(inputData), outputData)
-plt.figure()
-
-
+print(roc_auc_score(logit1.predict(inputData), outputData))
