@@ -49,16 +49,5 @@ plt.show()
 
 roc_auc_score(logit1.predict(inputData), outputData)
 plt.figure()
-plt.scatter(inputData.iloc[:, 1], inputData.iloc[:, 5],
-            c=logit1.predict_proba(inputData)[:, 1], alpha=0.4)
-plt.xlabel('Glucose level ')
-plt.ylabel('BMI ')
-plt.show()
 
 
-plt.figure()
-plt.scatter(inputData.iloc[:, 1],
-            inputData.iloc[:, 5], c=outputData, alpha=0.4)
-plt.xlabel('Glucose level ')
-plt.ylabel('BMI ')
-plt.show()
