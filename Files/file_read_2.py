@@ -1,4 +1,4 @@
-f = open("sample.txt", "r")
+f = open("/../Files_Used/sample.txt", "r")
 print(f.read(10))
 print(f.tell())
 print(f.read(10))
