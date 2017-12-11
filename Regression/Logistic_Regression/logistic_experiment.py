@@ -10,7 +10,7 @@ Diabetes = pd.read_csv("C:\\Users\\saimanoj\\Downloads\\diabetes.csv")
 # table2 = np.std(Diabetes, axis=0)
 
 inputData = Diabetes.iloc[:, :8]
-outputData = Diabetes.iloc[:, 8] 
+outputData = Diabetes.iloc[:, 8]
 
 log_model = LogisticRegression()
 log_model.fit(inputData, outputData)
