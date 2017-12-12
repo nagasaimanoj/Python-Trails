@@ -1,9 +1,5 @@
-import csv
-import datetime as dt
-
-import matplotlib.pyplot as plt
-import numpy as np
-import pandas
+from matplotlib import pyplot
+from numpy import array, append
 from sklearn import linear_model
 
 import quandl
@@ -20,17 +16,16 @@ for i in range(len(csv_file)):
 
 min_year = min(x_data).year
 
-x_data_2 = np.array([])
+x_data_2 = array([])
 
 for i in x_data:
-    x_data_2 = np.append(x_data_2, [i.month + (12 * (i.year - min_year))])
+    x_data_2 = append(x_data_2, [i.month + (12 * (i.year - min_year))])
 
 x_data_2.shape = (len(x_data_2), 1)
 
 regr = linear_model.LinearRegression()
 regr.fit(x_data_2, y_data)
 
-plt.plot(x_data_2, y_data, marker='o')
-
-plt.plot(x_data_2, regr.predict(x_data_2), marker='o')
-plt.show()
+pyplot.plot(x_data_2, y_data, marker='o')
+pyplot.plot(x_data_2, regr.predict(x_data_2), marker='o')
+pyplot.show()

@@ -1,4 +1,4 @@
-import matplotlib.pyplot as plt
+from matplotlib import pyplot as plt
 from sklearn import linear_model
 
 # since height is independent feature, it can be multi dimensional too

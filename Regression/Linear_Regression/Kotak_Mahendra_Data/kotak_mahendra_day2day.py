@@ -1,7 +1,5 @@
-import datetime as dt
-
-import matplotlib.pyplot as plt
-import numpy as np
+from matplotlib import pyplot
+from numpy import array, append
 from sklearn import linear_model
 
 import quandl
@@ -18,16 +16,16 @@ for i in range(len(csv_file)):
 
 min_date = min(x_data)
 
-x_data_2 = np.array([], dtype=int)
+x_data_2 = array([], dtype=int)
 
 for i in x_data:
-    x_data_2 = np.append(x_data_2, [(i - min_date).days])
+    x_data_2 = append(x_data_2, [(i - min_date).days])
 
 x_data_2.shape = (len(x_data_2), 1)
 
 regr = linear_model.LinearRegression()
 regr.fit(x_data_2, y_data)
 
-plt.plot(x_data_2, y_data, marker='o')
-plt.plot(x_data_2, regr.predict(x_data_2), marker='o')
-plt.show()
+pyplot.plot(x_data_2, y_data, marker='o')
+pyplot.plot(x_data_2, regr.predict(x_data_2), marker='o')
+pyplot.show()

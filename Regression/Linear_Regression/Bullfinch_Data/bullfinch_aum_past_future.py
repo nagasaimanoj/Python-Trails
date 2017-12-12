@@ -1,4 +1,4 @@
-import matplotlib.pyplot as plt
+from matplotlib import pyplot
 from sklearn import linear_model
 
 years = [[2012], [2013], [2014], [2015], [2016], [2017]]
@@ -13,5 +13,5 @@ for i in range(1, 6):
     years += next_year
     aum_per_year += list(reg.predict(next_year))
 
-plt.plot(years, aum_per_year, marker='o')
-plt.show()
+pyplot.plot(years, aum_per_year, marker='o')
+pyplot.show()
