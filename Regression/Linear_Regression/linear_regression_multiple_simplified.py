@@ -1,6 +1,5 @@
-import matplotlib.pyplot as plt
-from sklearn import linear_model
-import numpy as np
+from matplotlib import pyplot as plt
+from sklearn import linear_model as lm
 
 # training data
 training_input = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [9, 10, 11], [12, 13, 14],
@@ -8,7 +7,7 @@ training_input = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [9, 10, 11], [12, 13, 14],
 training_output = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 # training the model using linear regression
-reg = linear_model.LinearRegression()
+reg = lm.LinearRegression()
 reg.fit(training_input, training_output)
 
 # generating a test data set
