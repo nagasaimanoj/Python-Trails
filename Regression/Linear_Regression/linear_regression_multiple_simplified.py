@@ -14,6 +14,6 @@ reg.fit(training_input, training_output)
 test_input = training_input + [[30, 31, 32], [33, 34, 35], [36, 37, 38]]
 
 # plotting graphs using actual data & our predections
-plt.plot(range(len(training_input)), training_output, marker="o")
+plt.scatter(range(len(training_input)), training_output)
 plt.plot(range(len(test_input)), reg.predict(test_input), marker="*")
 plt.show()
