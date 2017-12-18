@@ -1,19 +1,32 @@
+# genfromtxt will read csv as array & mean will calculate average
 from numpy import genfromtxt, mean
 
+# reading csv file as an array
 points = genfromtxt("C:\\Users\\saimanoj\\Downloads\\data.csv", delimiter=",")
 
-b, m = 0, 0
+# initialising intercept and slope values as 0
+intercept, slope = 0, 0
+
+# itteration count to 10 times the length of data set
 num_iterations = len(points) * 10
+
+# learning rate to 100th of data set size
 learning_rate = 1 / (num_iterations * 10)
 
+# running the loop for 10x the length of data to generate accurate slope and intercept
 for i in range(num_iterations):
-
+    # calculating average change in values when compared with predected and actual values
     avg_change = mean(2 / len(points) *
-                      (points[:, 1] - (m * points[:, 0]) + b))
+                      (points[:, 1] - (slope * points[:, 0]) + intercept))
 
-    b += avg_change * learning_rate
-    m += (avg_change * sum(points[:, 0])) * learning_rate
+    # using that average change to adjust intercept
+    intercept += avg_change * learning_rate
 
-print("b =", b)
-print("m =", m)
-print("error =", mean((points[:, 1] - (m * points[:, 0] + b)) ** 2))
+    # using that average change to adjust slope
+    slope += (avg_change * sum(points[:, 0])) * learning_rate
+
+# printing output values one by one
+print("intercept =", intercept)
+print("m =", slope)
+print("error =", mean(
+    (points[:, 1] - (slope * points[:, 0] + intercept)) ** 2))
