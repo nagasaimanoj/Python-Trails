@@ -28,5 +28,3 @@ do:
         file.write(query)
         file.close()
 while(y_or_n == 'n')
-
-input("\n\n----------\nHit enter to close\n")
