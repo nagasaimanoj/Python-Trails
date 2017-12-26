@@ -23,5 +23,3 @@ chart.grid(True)
 
 chart.plot(x, z)
 chart.show()
-
-input("\n\n----------\nHit enter to close\n")

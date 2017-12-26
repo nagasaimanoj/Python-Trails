@@ -3,5 +3,3 @@ class class_trail:
                 print(float(x * y))       
         
 class_trail(1, 2)
-
-input("\n\n----------\nHit enter to close\n")

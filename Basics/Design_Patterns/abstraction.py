@@ -5,5 +5,3 @@ class Rectangle(object):
 
 area = Rectangle.calculate_area(height = 5, width = 7)
 print(area)
-
-input("\n\n----------\nHit enter to close\n")

@@ -30,5 +30,3 @@ publisher.register(manoj)
 # Notifications are sent to every observer (subscriber)
 publisher.send_notifications('We updated the website')
 publisher.send_notifications('Make sure to add a profile picture')
-
-input("\n\n----------\nHit enter to close\n")

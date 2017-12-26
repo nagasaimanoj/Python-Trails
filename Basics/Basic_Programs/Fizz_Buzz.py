@@ -9,5 +9,3 @@ def print_Fizz_Buzz(num):
 
 
 print_Fizz_Buzz(int(input("Enter range : ")))
-
-input("\n\n----------\nHit enter to close\n")

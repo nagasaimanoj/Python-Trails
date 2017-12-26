@@ -15,5 +15,3 @@ while(True):
         choose_a_place()
         again = input("do you want to choose again..? (y/n) : ")
         if(again == 'n'): break
-
-input("\n\n----------\nHit enter to close\n")

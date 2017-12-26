@@ -12,5 +12,3 @@ class Rectangle:
 
 square = Rectangle.new_square(5)
 print(square.calculate_area())
-
-input("\n\n----------\nHit enter to close\n")

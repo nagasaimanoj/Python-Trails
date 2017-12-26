@@ -26,5 +26,3 @@ for i in range(12):
             if(week_day % 7 == 0): print()
             print(str(day) + " / " + str(months[i] + " / " + str(year) + " - " + str(weeks[week_day%7])))
             week_day += 1
-
-input("\n\n----------\nHit enter to close\n")

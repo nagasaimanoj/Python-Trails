@@ -12,5 +12,3 @@ if(num < 0):
     print(str(1))
 
 print(str(factorial(num)))
-
-input("\n\n----------\nHit enter to close\n")

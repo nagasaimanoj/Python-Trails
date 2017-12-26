@@ -32,5 +32,3 @@ ninja.karate_chop()
 zombie = Zombie()
 zombie.move_right()
 zombie.bite()
-
-input("\n\n----------\nHit enter to close\n")

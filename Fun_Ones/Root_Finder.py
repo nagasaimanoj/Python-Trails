@@ -22,5 +22,3 @@ else:
     if(mid_val == int(mid_val)): mid_val = int(mid_val)
 
 print(str(root) + "√" + str(num) + " = " + str(mid_val))
-
-input("\n\n----------\nHit enter to close\n")

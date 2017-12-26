@@ -10,5 +10,3 @@ second = Vector2D(3, 9)
 result = first + second
 print(result.x)
 print(result.y)
-
-input("\n\n----------\nHit enter to close\n")

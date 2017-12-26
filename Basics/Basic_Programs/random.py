@@ -6,5 +6,3 @@ coin = ['heads', 'tails']
 print("coin toss = ", coin[randint(0, 1)])
 
 print("np.random = ", np.random.seed(12))
-
-input("\n\n----------\nHit enter to close\n")

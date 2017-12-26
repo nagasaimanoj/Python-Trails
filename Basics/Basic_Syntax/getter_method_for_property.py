@@ -19,5 +19,3 @@ print(pizza.pineapple_allowed)
 
 pizza.pineapple_allowed = False
 print(pizza.pineapple_allowed)
-
-input("\n\n----------\nHit enter to close\n")

@@ -20,5 +20,3 @@ class Person(object):
 
 bucky = Person('blue', 'blonde', 160)
 bucky.print_eye_color()
-
-input("\n\n----------\nHit enter to close\n")

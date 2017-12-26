@@ -17,5 +17,3 @@ def someX():
     print("someX")
 
 someX()
-
-input("\n\n----------\nHit enter to close\n")

@@ -46,5 +46,3 @@ print("multiplied table :\n")
 
 for row in table3:
     print(row)
-
-input("\n\n----------\nHit enter to close\n")

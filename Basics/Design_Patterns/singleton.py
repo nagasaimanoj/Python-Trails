@@ -23,5 +23,3 @@ b = Singleton()
 
 # Even though we now have 3 different instances of this class, they all reference the same object
 c = Singleton()
-
-input("\n\n----------\nHit enter to close\n")

@@ -9,5 +9,3 @@ for i in range(2, n):
         if(is_prime): prime_numbers.insert(len(prime_numbers), i)
         
 print(prime_numbers)
-        
-input("\n\n----------\nHit enter to close\n")

@@ -10,5 +10,3 @@ for j in range(2, num):
                 break
 
 print(is_prime)
-
-input("\n\n----------\nHit enter to close\n")

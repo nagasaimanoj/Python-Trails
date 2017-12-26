@@ -14,5 +14,3 @@ if(len(prime_factors)):
 
 else:
     print("Error : no prime factors for " + str(n))
-
-input("\n\n----------\nHit enter to close\n")
