@@ -1,6 +1,6 @@
-import os
+from os.path import dirname
 
-f = open(os.path.dirname(__file__) + "\\" + "sample.txt", "r")
+f = open(dirname(__file__) + "\\" + "sample.txt", "r")
 print(f.read(10))
 print(f.tell())
 print(f.read(10))

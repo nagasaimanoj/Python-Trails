@@ -3,13 +3,14 @@ from numpy import arange, asarray, cov, genfromtxt, mean, nditer, where
 from scipy.stats import multivariate_normal
 from sklearn import svm
 from sklearn.metrics import f1_score
+from os.path import dirname
 
-data_set_1 = genfromtxt(
-    "C:\\Users\\saimanoj\\Downloads\\Anomaly-Detection\\tr_server_data.csv", delimiter=",")
-data_set_2 = genfromtxt(
-    "C:\\Users\\saimanoj\\Downloads\\Anomaly-Detection\\cv_server_data.csv", delimiter=",")
-data_set_3 = genfromtxt(
-    "C:\\Users\\saimanoj\\Downloads\\Anomaly-Detection\\gt_server_data.csv", delimiter=",")
+data_set_1 = genfromtxt(dirname(__file__) + "\\" +
+                        "tr_server_data.csv", delimiter=",")
+data_set_2 = genfromtxt(dirname(__file__) + "\\" +
+                        "cv_server_data.csv", delimiter=",")
+data_set_3 = genfromtxt(dirname(__file__) + "\\" +
+                        "gt_server_data.csv", delimiter=",")
 
 pyplot.plot(data_set_1[:, 0], data_set_1[:, 1], "bx")
 pyplot.title("raw data")
