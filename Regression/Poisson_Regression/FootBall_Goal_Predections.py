@@ -1,11 +1,12 @@
-from pandas import read_csv
+from os.path import dirname
+
 from matplotlib import pyplot
 from numpy import arange
+from pandas import read_csv
 from scipy.stats import poisson
 
 # collecting foot ball match data from a CSV file
-match_data = read_csv(
-    "C:\\Users\\saimanoj\\Downloads\\E0.csv")[['FTHG', 'FTAG']]
+match_data = read_csv(dirname(__file__) + "\\" + "E0.csv")[['FTHG', 'FTAG']]
 
 # plotting a histogram based on actual data
 pyplot.hist(match_data.values, range(10), normed=True,
