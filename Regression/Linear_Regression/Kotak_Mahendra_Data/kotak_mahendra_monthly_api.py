@@ -1,10 +1,10 @@
 from matplotlib import pyplot
-from numpy import array, append
+from numpy import append, array
 from sklearn.linear_model import LinearRegression
 
-import quandl
+from quandl import get
 
-csv_file = list(quandl.get("NSE/KOTAKNIFTY",
+csv_file = list(get("NSE/KOTAKNIFTY",
                            authtoken="qAsk6MJV-VXWMqoWDJQk", returns='numpy'))
 
 x_data = []
