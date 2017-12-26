@@ -1,13 +1,14 @@
-import pandas as pd
-import matplotlib.pyplot as plt
-import numpy as np
+from pandas import read_csv
+from matplotlib import pyplot
+from numpy import mean, std
 from sklearn.metrics import confusion_matrix, roc_curve
 from sklearn.linear_model import LogisticRegression
+from os.path import dirname
 
-Diabetes = pd.read_csv("C:\\Users\\saimanoj\\Downloads\\diabetes.csv")
+Diabetes = read_csv(dirname(__file__) + "\\" + "diabetes.csv")
 
-# table1 = np.mean(Diabetes, axis=0)
-# table2 = np.std(Diabetes, axis=0)
+# table1 = mean(Diabetes, axis=0)
+# table2 = std(Diabetes, axis=0)
 
 inputData = Diabetes.iloc[:, :8]
 outputData = Diabetes.iloc[:, 8]
@@ -19,18 +20,18 @@ log_model.fit(inputData, outputData)
 # trueInput = Diabetes.ix[Diabetes['Outcome'] == 1].iloc[:, :8]
 # trueOutput = Diabetes.ix[Diabetes['Outcome'] == 1].iloc[:, 8]
 
-# np.mean(log_model.predict(trueInput) == trueOutput)
+# mean(log_model.predict(trueInput) == trueOutput)
 
 # falseInput = Diabetes.ix[Diabetes['Outcome'] == 0].iloc[:, :8]
 # falseOutput = Diabetes.ix[Diabetes['Outcome'] == 0].iloc[:, 8]
 
-# np.mean(log_model.predict(falseInput) == falseOutput)
+# mean(log_model.predict(falseInput) == falseOutput)
 
 # confusion_matrix(log_model.predict(inputData), outputData)
 
 fpr, tpr, _ = roc_curve(log_model.predict(inputData), outputData)
 
-plt.plot(fpr, tpr)
+pyplot.plot(fpr, tpr)
 
-plt.plot([0, 1], [0, 1])
-plt.show()
+pyplot.plot([0, 1], [0, 1])
+pyplot.show()
