@@ -6,25 +6,25 @@ from pandas import read_csv
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import confusion_matrix, roc_curve
 
-Diabetes = read_csv(dirname(__file__) + "\\" + "diabetes.csv")
+diabetes_data = read_csv(dirname(__file__) + "\\" + "diabetes.csv")
 
-# table1 = mean(Diabetes, axis=0)
-# table2 = std(Diabetes, axis=0)
+# table1 = mean(diabetes_data, axis=0)
+# table2 = std(diabetes_data, axis=0)
 
-inputData = Diabetes.iloc[:, :8]
-outputData = Diabetes.iloc[:, 8]
+inputData = diabetes_data.iloc[:, :8]
+outputData = diabetes_data.iloc[:, 8]
 
 log_model = LogisticRegression()
 log_model.fit(inputData, outputData)
 # log_model.score(inputData, outputData)
 
-# trueInput = Diabetes.ix[Diabetes['Outcome'] == 1].iloc[:, :8]
-# trueOutput = Diabetes.ix[Diabetes['Outcome'] == 1].iloc[:, 8]
+# trueInput = diabetes_data.ix[diabetes_data['Outcome'] == 1].iloc[:, :8]
+# trueOutput = diabetes_data.ix[diabetes_data['Outcome'] == 1].iloc[:, 8]
 
 # mean(log_model.predict(trueInput) == trueOutput)
 
-# falseInput = Diabetes.ix[Diabetes['Outcome'] == 0].iloc[:, :8]
-# falseOutput = Diabetes.ix[Diabetes['Outcome'] == 0].iloc[:, 8]
+# falseInput = diabetes_data.ix[diabetes_data['Outcome'] == 0].iloc[:, :8]
+# falseOutput = diabetes_data.ix[diabetes_data['Outcome'] == 0].iloc[:, 8]
 
 # mean(log_model.predict(falseInput) == falseOutput)
 

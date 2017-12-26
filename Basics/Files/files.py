@@ -1,5 +1,5 @@
 from os.path import dirname
 
-file = open(dirname(__file__) + "\\" + "sample.txt", 'w')
-file.write("hello again")
-file.close()
+sample_file = open(dirname(__file__) + "\\" + "sample.txt", 'w')
+sample_file.write("hello again")
+sample_file.close()

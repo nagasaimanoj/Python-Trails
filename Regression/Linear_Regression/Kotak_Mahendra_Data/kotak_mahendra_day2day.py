@@ -4,28 +4,28 @@ from sklearn.linear_model import LinearRegression
 
 from quandl import get
 
-csv_file = list(get("NSE/KOTAKNIFTY",
-                    authtoken="qAsk6MJV-VXWMqoWDJQk", returns='numpy'))
+KOTAK_csv_file = list(get("NSE/KOTAKNIFTY",
+                          authtoken="qAsk6MJV-VXWMqoWDJQk", returns='numpy'))
 
-x_data = []
-y_data = []
+KOTAK_x_data = []
+KOTAK_y_data = []
 
-for i in range(len(csv_file)):
-    x_data.append(csv_file[i][0])
-    y_data.append(csv_file[i][7])
+for i in range(len(KOTAK_csv_file)):
+    KOTAK_x_data.append(KOTAK_csv_file[i][0])
+    KOTAK_y_data.append(KOTAK_csv_file[i][7])
 
-min_date = min(x_data)
+min_date = min(KOTAK_x_data)
 
 x_data_2 = array([], dtype=int)
 
-for i in x_data:
+for i in KOTAK_x_data:
     x_data_2 = append(x_data_2, [(i - min_date).days])
 
 x_data_2.shape = (len(x_data_2), 1)
 
 regr = LinearRegression()
-regr.fit(x_data_2, y_data)
+regr.fit(x_data_2, KOTAK_y_data)
 
-pyplot.plot(x_data_2, y_data, marker='o')
+pyplot.plot(x_data_2, KOTAK_y_data, marker='o')
 pyplot.plot(x_data_2, regr.predict(x_data_2), marker='o')
 pyplot.show()
