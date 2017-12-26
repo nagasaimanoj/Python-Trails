@@ -1,8 +1,9 @@
 from csv import reader
 from matplotlib import pyplot
 from numpy import array
+from os.path import dirname
 
-csv_file = open("C:\\Users\\saimanoj\\Downloads\\revenue.csv")
+csv_file = open(dirname(__file__) + "\\" + "revenue.csv")
 csv_reader = reader(csv_file)
 csv_data = array(list(csv_reader))
 
