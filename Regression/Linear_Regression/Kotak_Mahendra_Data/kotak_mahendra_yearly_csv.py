@@ -1,7 +1,7 @@
 from csv import reader
 from matplotlib import pyplot
 from numpy import array, append, arange
-from sklearn import linear_model
+from sklearn.linear_model import LinearRegression
 from os.path import dirname
 
 # reading CSV file from local disk
@@ -14,7 +14,7 @@ x_data = array(csv_data[..., :1], dtype=int)
 y_data = array(csv_data[..., 1:], dtype=float).T[0]
 
 # creating regression object & training with existing data
-regr = linear_model.LinearRegression()
+regr = LinearRegression()
 regr.fit(x_data, y_data)
 
 # plotting a graph using existing data

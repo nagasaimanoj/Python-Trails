@@ -1,5 +1,5 @@
-from matplotlib import pyplot as plt
-from sklearn import linear_model as lm
+from matplotlib import pyplot
+from sklearn.linear_model import LinearRegression
 
 # training data
 training_input = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [9, 10, 11], [12, 13, 14],
@@ -7,13 +7,13 @@ training_input = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [9, 10, 11], [12, 13, 14],
 training_output = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 # training the model using linear regression
-reg = lm.LinearRegression()
+reg = LinearRegression()
 reg.fit(training_input, training_output)
 
 # generating a test data set
 test_input = training_input + [[30, 31, 32], [33, 34, 35], [36, 37, 38]]
 
 # plotting graphs using actual data & our predections
-plt.scatter(range(len(training_input)), training_output)
-plt.plot(range(len(test_input)), reg.predict(test_input), marker="*")
-plt.show()
+pyplot.scatter(range(len(training_input)), training_output)
+pyplot.plot(range(len(test_input)), reg.predict(test_input), marker="*")
+pyplot.show()

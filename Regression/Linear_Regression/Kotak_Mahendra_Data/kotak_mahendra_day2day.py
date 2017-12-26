@@ -1,6 +1,6 @@
 from matplotlib import pyplot
 from numpy import array, append
-from sklearn import linear_model
+from sklearn.linear_model import LinearRegression
 
 import quandl
 
@@ -23,7 +23,7 @@ for i in x_data:
 
 x_data_2.shape = (len(x_data_2), 1)
 
-regr = linear_model.LinearRegression()
+regr = LinearRegression()
 regr.fit(x_data_2, y_data)
 
 pyplot.plot(x_data_2, y_data, marker='o')

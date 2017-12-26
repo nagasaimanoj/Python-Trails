@@ -1,4 +1,4 @@
-from sklearn import linear_model
+from sklearn.linear_model import LinearRegression
 from numpy import array
 from matplotlib import pyplot
 
@@ -7,7 +7,7 @@ input_data = array([[2012, 5869.4, -117], [2013, 4925, -84], [2014, 64, -51],
 
 output_data = [123, 365, 365, 365, 320, 273]
 
-lm = linear_model.LinearRegression()
+lm = LinearRegression()
 lm.fit(input_data, output_data)
 
 pred_out = lm.predict(input_data)
