@@ -1,9 +1,8 @@
-import plotly.offline as offline
-import plotly.graph_objs as go
+from plotly.offline import init_notebook_mode, iplot
 
-offline.init_notebook_mode()
+init_notebook_mode()
 
-offline.iplot({'data': [{'y': [4, 2, 3, 4]}], 
-               'layout': {'title': 'Test Plot', 
-                          'font': dict(size=16)}},
-             image='png')
+iplot({'data': [{'y': [4, 2, 3, 4]}],
+       'layout': {'title': 'Test Plot',
+                  'font': dict(size=16)}},
+      image='png')

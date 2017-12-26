@@ -1,3 +1,3 @@
-import os
+from os.path import dirname
 
-print(os.path.dirname(__file__))
+print(dirname(__file__))

@@ -1,6 +1,5 @@
-import quandl
-import numpy as np
+from quandl import get
 
-data = quandl.get("NSE/KOTAKNIFTY", authtoken="qAsk6MJV-VXWMqoWDJQk")
+data = get("NSE/KOTAKNIFTY", authtoken="qAsk6MJV-VXWMqoWDJQk")
 
 print(data)
