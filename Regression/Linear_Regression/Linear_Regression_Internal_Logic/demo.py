@@ -1,6 +1,7 @@
 # genfromtxt will read csv as array & mean will calculate average
-from numpy import genfromtxt, mean
 from os.path import dirname
+
+from numpy import genfromtxt, mean
 
 # reading csv file as an array
 points = genfromtxt(dirname(__file__) + "\\" + "data.csv", delimiter=",")

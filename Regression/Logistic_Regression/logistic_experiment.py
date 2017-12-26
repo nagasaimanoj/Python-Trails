@@ -1,9 +1,10 @@
-from pandas import read_csv
+from os.path import dirname
+
 from matplotlib import pyplot
 from numpy import mean, std
-from sklearn.metrics import confusion_matrix, roc_curve
+from pandas import read_csv
 from sklearn.linear_model import LogisticRegression
-from os.path import dirname
+from sklearn.metrics import confusion_matrix, roc_curve
 
 Diabetes = read_csv(dirname(__file__) + "\\" + "diabetes.csv")
 

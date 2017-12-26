@@ -1,5 +1,5 @@
 from matplotlib import pyplot
-from numpy import array, unique, append, count_nonzero
+from numpy import append, array, count_nonzero, unique
 from scipy.stats import poisson
 
 # collecting goal_count data per match

@@ -1,9 +1,10 @@
+from os.path import dirname
+
 from matplotlib import pyplot
 from numpy import arange, asarray, cov, genfromtxt, mean, nditer, where
 from scipy.stats import multivariate_normal
 from sklearn import svm
 from sklearn.metrics import f1_score
-from os.path import dirname
 
 data_set_1 = genfromtxt(dirname(__file__) + "\\" +
                         "tr_server_data.csv", delimiter=",")

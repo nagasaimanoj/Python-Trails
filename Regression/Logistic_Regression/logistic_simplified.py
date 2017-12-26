@@ -1,7 +1,8 @@
+from os.path import dirname
+
 from numpy import mean
 from pandas import read_csv
 from sklearn.linear_model import LogisticRegression
-from os.path import dirname
 
 Diabetes = read_csv(dirname(__file__) + "\\" + "diabetes.csv")
 

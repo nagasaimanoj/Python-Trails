@@ -1,8 +1,9 @@
 from csv import reader
-from matplotlib import pyplot
-from numpy import array, append, arange
-from sklearn.linear_model import LinearRegression
 from os.path import dirname
+
+from matplotlib import pyplot
+from numpy import append, arange, array
+from sklearn.linear_model import LinearRegression
 
 # reading CSV file from local disk
 csv_file = open(dirname(__file__) + "\\" + "data.csv")
