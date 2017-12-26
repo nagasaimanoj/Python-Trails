@@ -6,49 +6,49 @@ from scipy.stats import multivariate_normal
 from sklearn import svm
 from sklearn.metrics import f1_score
 
-data_set_1 = genfromtxt(dirname(__file__) + "\\" +
+DATA_SET_1 = genfromtxt(dirname(__file__) + "\\" +
                         "tr_server_data.csv", delimiter=",")
-data_set_2 = genfromtxt(dirname(__file__) + "\\" +
+DATA_SET_2 = genfromtxt(dirname(__file__) + "\\" +
                         "cv_server_data.csv", delimiter=",")
-data_set_3 = genfromtxt(dirname(__file__) + "\\" +
+DATA_SET_3 = genfromtxt(dirname(__file__) + "\\" +
                         "gt_server_data.csv", delimiter=",")
 
-pyplot.plot(data_set_1[:, 0], data_set_1[:, 1], "bx")
+pyplot.plot(DATA_SET_1[:, 0], DATA_SET_1[:, 1], "bx")
 pyplot.title("raw data")
 pyplot.show()
 
-n_training_samples = data_set_1.shape[0]
-n_dim = data_set_1.shape[1]
+N_TRAINING_SAMPLES = DATA_SET_1.shape[0]
+N_DIM = DATA_SET_1.shape[1]
 
-mu, sigma = mean(data_set_1, axis=0), cov(data_set_1.T)
+MU, SIGMA = mean(DATA_SET_1, axis=0), cov(DATA_SET_1.T)
 
-p = multivariate_normal(mean=mu, cov=sigma).pdf(data_set_1)
-p_cv = multivariate_normal(mean=mu, cov=sigma).pdf(data_set_2)
+DATA_SET_1_P = multivariate_normal(mean=MU, cov=SIGMA).pdf(DATA_SET_1)
+DATA_SET_1_P_CV = multivariate_normal(mean=MU, cov=SIGMA).pdf(DATA_SET_2)
 
 ep, fscore, f = 0, 0, 0
-for epsilon in nditer(arange(min(p_cv), max(p_cv), (max(p_cv) - min(p_cv)) / 1000)):
-    predictions = (p_cv < epsilon)
-    f = f1_score(data_set_3, predictions, average="binary")
+for epsilon in nditer(arange(min(DATA_SET_1_P_CV), max(DATA_SET_1_P_CV), (max(DATA_SET_1_P_CV) - min(DATA_SET_1_P_CV)) / 1000)):
+    predictions = (DATA_SET_1_P_CV < epsilon)
+    f = f1_score(DATA_SET_3, predictions, average="binary")
     if f > fscore:
         fscore = f
         ep = epsilon
 
-outliers = asarray(where(p < ep))
+OUTLIERS = asarray(where(DATA_SET_1_P < ep))
 
-pyplot.plot(data_set_1[:, 0], data_set_1[:, 1], "bx")
-pyplot.plot(data_set_1[outliers, 0], data_set_1[outliers, 1], "ro")
+pyplot.plot(DATA_SET_1[:, 0], DATA_SET_1[:, 1], "bx")
+pyplot.plot(DATA_SET_1[OUTLIERS, 0], DATA_SET_1[OUTLIERS, 1], "ro")
 pyplot.title("outliers")
 pyplot.show()
 
-clf = svm.OneClassSVM(nu=0.05, kernel="rbf", gamma=0.1)
-clf.fit(data_set_1)
+CLF = svm.OneClassSVM(nu=0.05, kernel="rbf", gamma=0.1)
+CLF.fit(DATA_SET_1)
 
-pred = clf.predict(data_set_1)
+DATA_SET_1_PRED = CLF.predict(DATA_SET_1)
 
-normal = data_set_1[pred == 1]
-abnormal = data_set_1[pred == -1]
+NORMAL = DATA_SET_1[DATA_SET_1_PRED == 1]
+ABNORMAL = DATA_SET_1[DATA_SET_1_PRED == -1]
 
-pyplot.plot(normal[:, 0], normal[:, 1], "bx")
-pyplot.plot(abnormal[:, 0], abnormal[:, 1], "ro")
+pyplot.plot(NORMAL[:, 0], NORMAL[:, 1], "bx")
+pyplot.plot(ABNORMAL[:, 0], ABNORMAL[:, 1], "ro")
 pyplot.title("abnormals")
 pyplot.show()
