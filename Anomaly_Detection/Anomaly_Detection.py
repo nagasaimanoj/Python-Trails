@@ -25,15 +25,17 @@ MU, SIGMA = mean(DATA_SET_1, axis=0), cov(DATA_SET_1.T)
 DATA_SET_1_P = multivariate_normal(mean=MU, cov=SIGMA).pdf(DATA_SET_1)
 DATA_SET_1_P_CV = multivariate_normal(mean=MU, cov=SIGMA).pdf(DATA_SET_2)
 
-ep, fscore, f = 0, 0, 0
-for epsilon in nditer(arange(min(DATA_SET_1_P_CV), max(DATA_SET_1_P_CV), (max(DATA_SET_1_P_CV) - min(DATA_SET_1_P_CV)) / 1000)):
+EP, FSCORE, F = 0, 0, 0
+EQUI_INTERVALED_ARRAY = arange(min(DATA_SET_1_P_CV), max(
+    DATA_SET_1_P_CV), (max(DATA_SET_1_P_CV) - min(DATA_SET_1_P_CV)) / 1000)
+for epsilon in nditer(EQUI_INTERVALED_ARRAY):
     predictions = (DATA_SET_1_P_CV < epsilon)
-    f = f1_score(DATA_SET_3, predictions, average="binary")
-    if f > fscore:
-        fscore = f
-        ep = epsilon
+    F = f1_score(DATA_SET_3, predictions, average="binary")
+    if F > FSCORE:
+        FSCORE = F
+        EP = epsilon
 
-OUTLIERS = asarray(where(DATA_SET_1_P < ep))
+OUTLIERS = asarray(where(DATA_SET_1_P < EP))
 
 pyplot.plot(DATA_SET_1[:, 0], DATA_SET_1[:, 1], "bx")
 pyplot.plot(DATA_SET_1[OUTLIERS, 0], DATA_SET_1[OUTLIERS, 1], "ro")
