@@ -6,19 +6,13 @@ from scipy.stats import multivariate_normal
 from sklearn import svm
 from sklearn.metrics import f1_score
 
-DATA_SET_1 = genfromtxt(dirname(__file__) + "\\" +
-                        "tr_server_data.csv", delimiter=",")
-DATA_SET_2 = genfromtxt(dirname(__file__) + "\\" +
-                        "cv_server_data.csv", delimiter=",")
-DATA_SET_3 = genfromtxt(dirname(__file__) + "\\" +
-                        "gt_server_data.csv", delimiter=",")
+DATA_SET_1 = genfromtxt(dirname(__file__) + "\\" + "file_1.csv", delimiter=",")
+DATA_SET_2 = genfromtxt(dirname(__file__) + "\\" + "file_2.csv", delimiter=",")
+DATA_SET_3 = genfromtxt(dirname(__file__) + "\\" + "file_3.csv", delimiter=",")
 
 pyplot.plot(DATA_SET_1[:, 0], DATA_SET_1[:, 1], "bx")
 pyplot.title("raw data")
 pyplot.show()
-
-N_TRAINING_SAMPLES = DATA_SET_1.shape[0]
-N_DIM = DATA_SET_1.shape[1]
 
 MU, SIGMA = mean(DATA_SET_1, axis=0), cov(DATA_SET_1.T)
 
