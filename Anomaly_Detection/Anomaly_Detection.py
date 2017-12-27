@@ -3,7 +3,7 @@ from os.path import dirname
 from matplotlib import pyplot
 from numpy import arange, asarray, cov, genfromtxt, mean, nditer, where
 from scipy.stats import multivariate_normal
-from sklearn import svm
+from sklearn.svm import OneClassSVM
 from sklearn.metrics import f1_score
 
 DATA_SET_1 = genfromtxt(dirname(__file__) + "\\" + "file_1.csv", delimiter=",")
@@ -36,7 +36,7 @@ pyplot.plot(DATA_SET_1[OUTLIERS, 0], DATA_SET_1[OUTLIERS, 1], "ro")
 pyplot.title("outliers")
 pyplot.show()
 
-CLF = svm.OneClassSVM(nu=0.05, kernel="rbf", gamma=0.1)
+CLF = OneClassSVM(nu=0.05, kernel="rbf", gamma=0.1)
 CLF.fit(DATA_SET_1)
 
 DATA_SET_1_PRED = CLF.predict(DATA_SET_1)
