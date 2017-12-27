@@ -11,6 +11,8 @@ DATA_SET_2 = genfromtxt(dirname(__file__) + "\\" + "file_2.csv", delimiter=",")
 DATA_SET_3 = genfromtxt(dirname(__file__) + "\\" + "file_3.csv", delimiter=",")
 
 pyplot.plot(DATA_SET_1[:, 0], DATA_SET_1[:, 1], "bx")
+pyplot.xlabel('Latency (ms)')
+pyplot.ylabel('Throughput (mb/s)')
 pyplot.title("raw data")
 pyplot.show()
 
@@ -33,6 +35,8 @@ OUTLIERS = asarray(where(DATA_SET_1_P < EP))
 
 pyplot.plot(DATA_SET_1[:, 0], DATA_SET_1[:, 1], "bx")
 pyplot.plot(DATA_SET_1[OUTLIERS, 0], DATA_SET_1[OUTLIERS, 1], "ro")
+pyplot.xlabel('Latency (ms)')
+pyplot.ylabel('Throughput (mb/s)')
 pyplot.title("outliers")
 pyplot.show()
 
@@ -46,5 +50,7 @@ ABNORMAL = DATA_SET_1[DATA_SET_1_PRED == -1]
 
 pyplot.plot(NORMAL[:, 0], NORMAL[:, 1], "bx")
 pyplot.plot(ABNORMAL[:, 0], ABNORMAL[:, 1], "ro")
+pyplot.xlabel('Latency (ms)')
+pyplot.ylabel('Throughput (mb/s)')
 pyplot.title("abnormals")
 pyplot.show()
