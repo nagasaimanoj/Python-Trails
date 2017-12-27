@@ -6,8 +6,9 @@ from sklearn.svm import OneClassSVM
 
 DATA_SET_1 = genfromtxt(dirname(__file__) + "\\" + "file_1.csv", delimiter=",")
 
-DATA_SET_1_PRED = OneClassSVM(nu=0.05, kernel="rbf", gamma=0.1).fit(
-    DATA_SET_1).predict(DATA_SET_1)
+ocs = OneClassSVM(nu=0.1, gamma=0.1)
+ocs.fit(DATA_SET_1)
+DATA_SET_1_PRED = ocs.predict(DATA_SET_1)
 
 NORMAL = DATA_SET_1[DATA_SET_1_PRED == 1]
 ABNORMAL = DATA_SET_1[DATA_SET_1_PRED == -1]
