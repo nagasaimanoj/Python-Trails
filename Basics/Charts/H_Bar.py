@@ -1,13 +1,12 @@
-import matplotlib.pyplot as plt
-plt.rcdefaults()
-import numpy as np
-import matplotlib.pyplot as plt
+from matplotlib import plot, show, subplots
 
-plt.rcdefaults()
-fig, ax = plt.subplots()
+from numpy import random, arange
 
-y_data = np.arange(5)
-x_data = 3 + 10 * np.random.rand(len(y_data))
+
+fig, ax = subplots()
+
+y_data = arange(5)
+x_data = 3 + 10 * random.rand(len(y_data))
 
 ax.barh(y_data, x_data)
-plt.show()
+show()
