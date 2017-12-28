@@ -1,12 +1,14 @@
-import datetime
+from datetime.datetime import datetime
+
 file_name = input("enter output file name : ")
 
 do:
     num = int(input("enter maximum number : "))
-    y_or_n = input("this can lead to " + str(2**num) + " records. do you still want to continue..?? (y / n) (default is n) : ")
+    y_or_n = input("this can lead to " + str(2**num) +
+                   " records. do you still want to continue..?? (y / n) (default is n) : ")
 
     if(y_or_n == 'y'):
-        query = "-- created on : " + str(datetime.datetime.now()) + "\n\n"
+        query = "-- created on : " + str(datetime.now()) + "\n\n"
         query += "select a.* from(SELECT " + "\n"
         query += "(1 \n+ TWO_1.SeqValue "
 
@@ -20,7 +22,8 @@ do:
 
         for i in range(1, num):
             j = 2 ** i
-                query+= "CROSS JOIN (SELECT 0 SeqValue UNION ALL SELECT " + str(j) + " SeqValue) TWO_" + str(j) + "\n"
+                query += "CROSS JOIN (SELECT 0 SeqValue UNION ALL SELECT " + \
+                    str(j) + " SeqValue) TWO_" + str(j) + "\n"
 
         query += ") a order by a.SeqValue"
 
