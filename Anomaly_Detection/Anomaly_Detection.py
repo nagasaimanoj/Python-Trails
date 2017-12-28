@@ -4,7 +4,7 @@ from matplotlib.pyplot import plot, show, title
 from numpy import genfromtxt
 from sklearn.svm import OneClassSVM
 
-DATA_SET_1 = genfromtxt(dirname(__file__) + "\\" + "women2.csv", delimiter=",")
+DATA_SET_1 = genfromtxt(dirname(__file__) + "\\" + "women.csv", delimiter=",")
 DATA_SET_1_LENGTH = len(DATA_SET_1[:, 0])
 
 ERROR_PERC = 0.05
