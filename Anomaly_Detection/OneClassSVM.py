@@ -1,7 +1,7 @@
 from os.path import dirname
 
 from matplotlib.pyplot import plot, show, title
-from numpy import genfromtxt, array
+from numpy import array, genfromtxt
 from sklearn.svm import SVC, OneClassSVM
 
 DATA_SET_1 = array(genfromtxt(dirname(__file__) +
