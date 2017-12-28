@@ -1,7 +1,7 @@
 from csv import reader
 from os.path import dirname
 
-from matplotlib import pyplot
+from matplotlib.pyplot import plot, show
 from numpy import append, arange, array
 from sklearn.linear_model import LinearRegression
 
@@ -19,7 +19,7 @@ regr = LinearRegression()
 regr.fit(x_data, y_data)
 
 # plotting a graph using existing data
-pyplot.plot(x_data, y_data, marker='o')
+plot(x_data, y_data, marker='o')
 
 # adding 5 years to our date variable to use for predection
 x_data = array(append(x_data, arange(
@@ -29,5 +29,5 @@ x_data = array(append(x_data, arange(
 x_data.shape = (len(x_data), 1)
 
 # plotting a graph using predected data
-pyplot.plot(x_data, regr.predict(x_data), marker='o')
-pyplot.show()
+plot(x_data, regr.predict(x_data), marker='o')
+show()

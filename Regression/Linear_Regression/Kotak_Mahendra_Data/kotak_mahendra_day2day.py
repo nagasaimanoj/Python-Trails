@@ -1,4 +1,4 @@
-from matplotlib import pyplot
+from matplotlib.pyplot import plot, show
 from numpy import append, array
 from sklearn.linear_model import LinearRegression
 
@@ -26,6 +26,6 @@ x_data_2.shape = (len(x_data_2), 1)
 regr = LinearRegression()
 regr.fit(x_data_2, KOTAK_y_data)
 
-pyplot.plot(x_data_2, KOTAK_y_data, marker='o')
-pyplot.plot(x_data_2, regr.predict(x_data_2), marker='o')
-pyplot.show()
+plot(x_data_2, KOTAK_y_data, marker='o')
+plot(x_data_2, regr.predict(x_data_2), marker='o')
+show()

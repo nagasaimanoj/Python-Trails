@@ -1,4 +1,4 @@
-from matplotlib import pyplot
+from matplotlib.pyplot import plot, show
 from numpy import array
 from sklearn.linear_model import LinearRegression
 
@@ -12,6 +12,6 @@ lm.fit(input_data, output_data)
 
 pred_out = lm.predict(input_data)
 
-pyplot.plot(input_data[:, 0], output_data)
-pyplot.plot(input_data[:, 0], pred_out, marker='*')
-pyplot.show()
+plot(input_data[:, 0], output_data)
+plot(input_data[:, 0], pred_out, marker='*')
+show()
