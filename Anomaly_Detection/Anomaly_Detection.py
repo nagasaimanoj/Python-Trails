@@ -15,3 +15,5 @@ ABNORMAL = DATA_SET_1[DATA_SET_1_PRED == -1]
 plot(NORMAL[:, 0], NORMAL[:, 1], "bx")
 plot(ABNORMAL[:, 0], ABNORMAL[:, 1], "ro")
 show()
+
+input()
