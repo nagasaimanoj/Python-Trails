@@ -48,3 +48,5 @@ pyplot.plot(NORMAL[:, 0], NORMAL[:, 1], "bx")
 pyplot.plot(ABNORMAL[:, 0], ABNORMAL[:, 1], "ro")
 pyplot.title("abnormals")
 pyplot.show()
+
+input()
