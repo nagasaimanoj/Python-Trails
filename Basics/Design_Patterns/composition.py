@@ -4,10 +4,12 @@ class Head(object):
         self.eye_color = eye_color
         self.hair_color = hair_color
 
+
 class Body(object):
 
     def __init__(self, weight):
         self.weight = weight
+
 
 class Person(object):
 
@@ -17,6 +19,7 @@ class Person(object):
 
     def print_eye_color(self):
         print(self.head.eye_color)
+
 
 bucky = Person('blue', 'blonde', 160)
 bucky.print_eye_color()

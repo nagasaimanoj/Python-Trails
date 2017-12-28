@@ -1,5 +1,6 @@
 from random import randrange
 
+
 class Weapon(object):
     name = None
     cost = None
@@ -11,13 +12,16 @@ class Weapon(object):
         if x == 1:
             return Gun()
 
+
 class Knife(Weapon):
     name = 'Knife'
     cost = 20.00
 
+
 class Gun(Weapon):
     name = 'Gun'
     cost = 300.00
+
 
 # Create 25 random weapons
 for _ in range(25):

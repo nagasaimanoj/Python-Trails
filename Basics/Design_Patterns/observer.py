@@ -11,13 +11,15 @@ class Publisher(object):
         for user in self.users:
             user.notify(message)
 
+
 class Subscriber(object):
 
     def __init__(self, username):
         self.username = username
 
     def notify(self, message):
-        print(self.username, 'received message:',message)
+        print(self.username, 'received message:', message)
+
 
 publisher = Publisher()
 

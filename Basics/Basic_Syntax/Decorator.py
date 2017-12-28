@@ -5,6 +5,7 @@ def dashes(func):
         print("-=-=-=-=-=-")
     return someFun
 
+
 def someY(func):
     def someFun():
         print("**********")
@@ -12,8 +13,10 @@ def someY(func):
         print("**********")
     return someFun
 
+
 @someY
 def someX():
     print("someX")
+
 
 someX()

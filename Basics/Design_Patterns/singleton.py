@@ -13,6 +13,7 @@ class Singleton(object):
             cls.__instance = Singleton()
         return cls.__instance
 
+
 a = Singleton()
 
 # Once a singleton is created, all instances of this class will use the same object
