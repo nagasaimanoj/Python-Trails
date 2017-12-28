@@ -1,5 +1,5 @@
+from matplotlib.pyplot import plot, show
 from numpy import mean, std
-from matplotlib import pyplot
 
 height = [58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71,
           72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86]
@@ -15,8 +15,8 @@ weight_std = std(weight)
 
 for i in range(len(height)):
     if(((height_mean - height_std) < height[i] < (height_mean + height_std))or((weight_mean - weight_std) < weight[i] < (weight_mean + weight_std))):
-        pass
+        plot(height[i], weight[i], 'bo')
     else:
-        pyplot.scatter(height[i], weight[i])
+        plot(height[i], weight[i], 'rx')
 
-pyplot.show()
+show()
