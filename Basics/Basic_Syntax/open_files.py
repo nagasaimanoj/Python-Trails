@@ -1,5 +1,5 @@
-import subprocess
+from subprocess import call
 
 file = input(r"drop a python file here : ")
 
-subprocess.call(['python', file])
+call(['python', file])

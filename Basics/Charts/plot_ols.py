@@ -1,5 +1,5 @@
-import matplotlib.pyplot as plt
-import numpy as np
+from matplotlib.pyplot import plot, scatter, show, xticks, yticks
+from numpy import newaxis
 from sklearn import datasets, linear_model
 from sklearn.metrics import mean_squared_error, r2_score
 
@@ -7,7 +7,7 @@ from sklearn.metrics import mean_squared_error, r2_score
 diabetes = datasets.load_diabetes()
 
 # Use only one feature
-diabetes_X = diabetes.data[:, np.newaxis, 2]
+diabetes_X = diabetes.data[:, newaxis, 2]
 
 # Split the data into training/testing sets
 diabetes_X_train = diabetes_X[:-20]
@@ -35,10 +35,10 @@ print("Mean squared error: %.2f"
 print('Variance score: %.2f' % r2_score(diabetes_y_test, diabetes_y_pred))
 
 # Plot outputs
-plt.scatter(diabetes_X_test, diabetes_y_test,  color='black')
-plt.plot(diabetes_X_test, diabetes_y_pred, color='blue', linewidth=3)
+scatter(diabetes_X_test, diabetes_y_test,  color='black')
+plot(diabetes_X_test, diabetes_y_pred, color='blue', linewidth=3)
 
-plt.xticks(())
-plt.yticks(())
+xticks(())
+yticks(())
 
-plt.show()
+show()

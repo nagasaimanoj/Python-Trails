@@ -1,5 +1,5 @@
-import os
+from os import startfile
 
 url = input("enter website url : ")
 
-os.startfile(url)
+startfile(url)

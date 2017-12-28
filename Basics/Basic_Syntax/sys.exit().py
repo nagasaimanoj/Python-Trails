@@ -1,3 +1,3 @@
-import sys
+from sys import exit
 
-sys.exit()
+exit()

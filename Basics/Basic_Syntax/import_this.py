@@ -1,1 +1,1 @@
-import this
+from this import __init__
