@@ -1,4 +1,4 @@
-from matplotlib import pyplot
+from matplotlib.pyplot import plot, show
 from numpy import append, array, count_nonzero, unique
 from scipy.stats import poisson
 
@@ -20,9 +20,9 @@ for i in X_DATA:
 num_count = num_count / sum(num_count)
 
 # plotting a graph based on existing data
-pyplot.plot(X_DATA, num_count, marker='o')
+plot(X_DATA, num_count, marker='o')
 
 # plotting a graph based on predected data
-pyplot.plot(X_DATA, pred_data, marker='*')
+plot(X_DATA, pred_data, marker='*')
 
-pyplot.show()
+show()

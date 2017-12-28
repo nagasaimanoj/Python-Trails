@@ -1,4 +1,4 @@
-from matplotlib import pyplot
+from matplotlib.pyplot import plot, show, scatter
 from sklearn.linear_model import LinearRegression
 
 # training data
@@ -14,6 +14,6 @@ reg.fit(training_input, training_output)
 test_input = training_input + [[30, 31, 32], [33, 34, 35], [36, 37, 38]]
 
 # plotting graphs using actual data & our predections
-pyplot.scatter(range(len(training_input)), training_output)
-pyplot.plot(range(len(test_input)), reg.predict(test_input), marker="*")
-pyplot.show()
+scatter(range(len(training_input)), training_output)
+plot(range(len(test_input)), reg.predict(test_input), marker="*")
+show()

@@ -1,4 +1,4 @@
-from matplotlib import pyplot
+from matplotlib.pyplot import plot, show, scatter
 from sklearn.linear_model import LinearRegression
 
 # since height is independent feature, it can be multi dimensional too
@@ -12,8 +12,8 @@ reg = LinearRegression()
 reg.fit(height, weight)
 
 # plotting scatter & line graphs using our original data
-pyplot.scatter(height, weight)
+scatter(height, weight)
 
 # plotting a line based on original heights and predicted weights
-pyplot.plot(height, reg.predict(height))
-pyplot.show()
+plot(height, reg.predict(height))
+show()

@@ -1,6 +1,6 @@
 from os.path import dirname
 
-from matplotlib import pyplot
+from matplotlib.pyplot import plot, show
 from numpy import mean, std
 from pandas import read_csv
 from sklearn.linear_model import LogisticRegression
@@ -32,7 +32,7 @@ log_model.fit(inputData, outputData)
 
 fpr, tpr, _ = roc_curve(log_model.predict(inputData), outputData)
 
-pyplot.plot(fpr, tpr)
+plot(fpr, tpr)
 
-pyplot.plot([0, 1], [0, 1])
-pyplot.show()
+plot([0, 1], [0, 1])
+show()
