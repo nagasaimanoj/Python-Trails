@@ -8,13 +8,16 @@ weight = [115, 117, 120, 123, 126, 129, 132, 135, 139, 142, 146, 150, 154, 159,
 
 height_mean = mean(height)
 height_std = std(height)
+height_upper_bound = height_mean + height_std
+height_lower_bound = height_mean - height_std
 
 weight_mean = mean(weight)
 weight_std = std(weight)
-
+weight_upper_bound = weight_mean + weight_std
+weight_lower_bound = weight_mean - weight_std
 
 for i in range(len(height)):
-    if(((height_mean - height_std) < height[i] < (height_mean + height_std))or((weight_mean - weight_std) < weight[i] < (weight_mean + weight_std))):
+    if((height_lower_bound < height[i] < height_upper_bound)or(weight_lower_bound < weight[i] < weight_upper_bound)):
         plot(height[i], weight[i], 'bo')
     else:
         plot(height[i], weight[i], 'rx')
