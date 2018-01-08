@@ -5,7 +5,7 @@ any point greater then maximum or lesser then minimum will be an outlier
 """
 
 from matplotlib.pyplot import plot, show
-from numpy import mean, std
+from numpy import array, mean, std
 
 HEIGHT = [58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71,
           72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86]
@@ -27,5 +27,19 @@ for i in range(len(HEIGHT)):
         plot(HEIGHT[i], WEIGHT[i], 'bo')
     else:
         plot(HEIGHT[i], WEIGHT[i], 'rx')
+
+POINTS = array([
+    [HEIGHT_LOWER_BOUND, WEIGHT_LOWER_BOUND],
+    [HEIGHT_UPPER_BOUND, WEIGHT_LOWER_BOUND],
+    [HEIGHT_UPPER_BOUND, WEIGHT_UPPER_BOUND],
+    [HEIGHT_LOWER_BOUND, WEIGHT_UPPER_BOUND],
+    [HEIGHT_LOWER_BOUND, WEIGHT_LOWER_BOUND]
+])
+
+plot([HEIGHT_MEAN, HEIGHT_MEAN], [
+     WEIGHT_LOWER_BOUND, WEIGHT_UPPER_BOUND], color="orange")
+plot([HEIGHT_LOWER_BOUND, HEIGHT_UPPER_BOUND], [
+     WEIGHT_MEAN, WEIGHT_MEAN], color="orange")
+plot(POINTS[:, 0], POINTS[:, 1], color="red", label='Boundary')
 
 show()
