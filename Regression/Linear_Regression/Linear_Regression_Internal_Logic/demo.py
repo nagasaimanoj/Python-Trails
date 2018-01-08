@@ -14,7 +14,7 @@ data_intercept, data_slope = 0, 0
 data_num_iterations = len(DATA_POINTS) * 10
 
 # learning rate to 100th of data set size
-learning_rate = 1 / (data_num_iterations * 10)
+learning_rate = 1 / data_num_iterations / 10
 
 # running the loop for 10x the length of data to generate accurate slope and intercept
 for i in range(data_num_iterations):
@@ -31,5 +31,5 @@ for i in range(data_num_iterations):
 # printing output values one by one
 print("intercept =", data_intercept)
 print("slope =", data_slope)
-print("error =", mean(
+print("average error =", mean(
     (DATA_POINTS[:, 1] - (data_slope * DATA_POINTS[:, 0] + data_intercept)) ** 2))
