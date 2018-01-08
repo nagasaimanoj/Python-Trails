@@ -1,5 +1,3 @@
-from itertools import range
-
 num = int(input("enter a number : "))
 
 is_prime = True
