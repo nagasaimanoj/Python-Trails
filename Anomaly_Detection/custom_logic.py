@@ -43,3 +43,5 @@ plot([HEIGHT_LOWER_BOUND, HEIGHT_UPPER_BOUND], [
 plot(POINTS[:, 0], POINTS[:, 1], color="red", label='Boundary')
 
 show()
+
+# added with TIG
