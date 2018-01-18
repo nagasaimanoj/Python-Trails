@@ -4,7 +4,7 @@ this will find mean value and standard deviation
 any point greater then maximum or lesser then minimum will be an outlier
 """
 
-from matplotlib.pyplot import plot, show
+from matplotlib.pyplot import legend, plot, scatter, show
 from numpy import array, mean, std
 
 HEIGHT = [58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71,
@@ -24,9 +24,9 @@ WEIGHT_LOWER_BOUND = WEIGHT_MEAN - WEIGHT_std
 
 for i in range(len(HEIGHT)):
     if((HEIGHT_LOWER_BOUND < HEIGHT[i] < HEIGHT_UPPER_BOUND)and(WEIGHT_LOWER_BOUND < WEIGHT[i] < WEIGHT_UPPER_BOUND)):
-        plot(HEIGHT[i], WEIGHT[i], 'bo')
+        scatter(HEIGHT[i], WEIGHT[i], marker="o", color="blue")
     else:
-        plot(HEIGHT[i], WEIGHT[i], 'rx')
+        scatter(HEIGHT[i], WEIGHT[i], marker="*", color="red")
 
 POINTS = array([
     [HEIGHT_LOWER_BOUND, WEIGHT_LOWER_BOUND],
@@ -36,10 +36,14 @@ POINTS = array([
     [HEIGHT_LOWER_BOUND, WEIGHT_LOWER_BOUND]
 ])
 
-plot([HEIGHT_MEAN, HEIGHT_MEAN], [
-     WEIGHT_LOWER_BOUND, WEIGHT_UPPER_BOUND], color="orange")
-plot([HEIGHT_LOWER_BOUND, HEIGHT_UPPER_BOUND], [
-     WEIGHT_MEAN, WEIGHT_MEAN], color="orange")
-plot(POINTS[:, 0], POINTS[:, 1], color="red", label='Boundary')
+plot([HEIGHT_MEAN, HEIGHT_MEAN],
+     [WEIGHT_LOWER_BOUND, WEIGHT_UPPER_BOUND],
+     color="orange", label="Mean Line")
+plot([HEIGHT_LOWER_BOUND, HEIGHT_UPPER_BOUND],
+     [WEIGHT_MEAN, WEIGHT_MEAN],
+     color="orange", label="Mean Line")
+plot(POINTS[:, 0], POINTS[:, 1],
+     color="red", label="Boundary")
 
+legend()
 show()
