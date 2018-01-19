@@ -5,7 +5,8 @@ any point greater then maximum or lesser then minimum will be an outlier
 """
 
 from matplotlib.pyplot import legend, plot, scatter, show
-from numpy import append, array, mean, std
+from numpy import append, array, mean, std, tan
+from sklearn.linear_model import LinearRegression
 
 HEIGHT = array([58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71,
                 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86])
@@ -38,6 +39,20 @@ scatter(valid_points[:, 0], valid_points[:, 1],
         marker="o", color="blue")
 scatter(invalid_points[:, 0], invalid_points[:, 1],
         marker="*", color="red")
+
+valid_x = valid_points[:, 0]
+valid_x.shape = (len(valid_x), 1)
+valid_y = valid_points[:, 1]
+
+Linear_Model = LinearRegression()
+Linear_Model.fit(valid_x, valid_y)
+
+coef = Linear_Model.coef_
+intercept = Linear_Model.intercept_
+
+plot(valid_x, valid_x * coef + intercept * 0.5)
+plot(valid_x, valid_x * coef + intercept)
+plot(valid_x, valid_x * coef + intercept * 1.5)
 
 POINTS = array([
     [HEIGHT_LOWER_BOUND, WEIGHT_LOWER_BOUND],
