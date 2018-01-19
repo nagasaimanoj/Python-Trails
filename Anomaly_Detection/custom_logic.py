@@ -5,12 +5,12 @@ any point greater then maximum or lesser then minimum will be an outlier
 """
 
 from matplotlib.pyplot import legend, plot, scatter, show
-from numpy import array, mean, std
+from numpy import append, array, mean, std
 
-HEIGHT = [58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71,
-          72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86]
-WEIGHT = [115, 117, 120, 123, 126, 129, 132, 135, 139, 142, 146, 150, 154, 159,
-          164, 164, 168, 171, 175, 178, 182, 185, 188, 192, 195, 199, 202, 206, 209]
+HEIGHT = array([58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71,
+                72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86])
+WEIGHT = array([115, 117, 120, 123, 126, 129, 132, 135, 139, 142, 146, 150, 154, 159,
+                164, 164, 168, 171, 175, 178, 182, 185, 188, 192, 195, 199, 202, 206, 209])
 
 HEIGHT_MEAN = mean(HEIGHT)
 HEIGHT_STD = std(HEIGHT)
@@ -22,11 +22,22 @@ WEIGHT_STD = std(WEIGHT)
 WEIGHT_UPPER_BOUND = WEIGHT_MEAN + WEIGHT_STD
 WEIGHT_LOWER_BOUND = WEIGHT_MEAN - WEIGHT_STD
 
+valid_points = array([], dtype='int')
+invalid_points = array([], dtype='int')
+
 for i in range(len(HEIGHT)):
     if((HEIGHT_LOWER_BOUND < HEIGHT[i] < HEIGHT_UPPER_BOUND)and(WEIGHT_LOWER_BOUND < WEIGHT[i] < WEIGHT_UPPER_BOUND)):
-        scatter(HEIGHT[i], WEIGHT[i], marker="o", color="blue")
+        valid_points = append(valid_points, [[HEIGHT[i], WEIGHT[i]]])
     else:
-        scatter(HEIGHT[i], WEIGHT[i], marker="*", color="red")
+        invalid_points = append(invalid_points, [[HEIGHT[i], WEIGHT[i]]])
+
+valid_points.shape = (int(len(valid_points) / 2), 2)
+invalid_points.shape = (int(len(invalid_points) / 2), 2)
+
+scatter(valid_points[:, 0], valid_points[:, 1],
+        marker="o", color="blue")
+scatter(invalid_points[:, 0], invalid_points[:, 1],
+        marker="*", color="red")
 
 POINTS = array([
     [HEIGHT_LOWER_BOUND, WEIGHT_LOWER_BOUND],
@@ -36,14 +47,14 @@ POINTS = array([
     [HEIGHT_LOWER_BOUND, WEIGHT_LOWER_BOUND]
 ])
 
+plot(POINTS[:, 0], POINTS[:, 1],
+     color="red", label="Boundary")
 plot([HEIGHT_MEAN, HEIGHT_MEAN],
      [WEIGHT_LOWER_BOUND, WEIGHT_UPPER_BOUND],
      color="orange", label="Mean Line")
 plot([HEIGHT_LOWER_BOUND, HEIGHT_UPPER_BOUND],
      [WEIGHT_MEAN, WEIGHT_MEAN],
      color="orange", label="Mean Line")
-plot(POINTS[:, 0], POINTS[:, 1],
-     color="red", label="Boundary")
 
 legend()
 show()
