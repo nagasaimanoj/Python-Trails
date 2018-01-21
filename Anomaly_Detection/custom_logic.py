@@ -50,23 +50,20 @@ Linear_Model.fit(valid_x, valid_y)
 coef = Linear_Model.coef_
 intercept = Linear_Model.intercept_
 
-plot(valid_x, valid_x * coef + intercept)
+plot(valid_x, Linear_Model.predict(valid_x), color="blue", label="Valid Line")
 
-plot(valid_x, valid_x * coef + intercept * 0.5,
-     color="grey", label="Experimental Boundary")
-plot(valid_x, valid_x * coef + intercept * 1.5,
-     color="grey", label="Experimental Boundary")
+Experimental_Boundary_Points = array([
+    [min(valid_x), min(valid_x * coef + intercept * 0.5)],
+    [min(valid_x), min(valid_x * coef + intercept * 1.5)],
+    [max(valid_x), max(valid_x * coef + intercept * 1.5)],
+    [max(valid_x), max(valid_x * coef + intercept * 0.5)],
+    [min(valid_x), min(valid_x * coef + intercept * 0.5)]
+])
 
-plot([min(valid_x), min(valid_x)],
-     [min(valid_x * coef + intercept * 0.5),
-      min(valid_x * coef + intercept * 1.5)],
-     color="grey", label="Experimental Boundary")
-plot([max(valid_x), max(valid_x)],
-     [max(valid_x * coef + intercept * 0.5),
-      max(valid_x * coef + intercept * 1.5)],
+plot(Experimental_Boundary_Points[:, 0], Experimental_Boundary_Points[:, 1],
      color="grey", label="Experimental Boundary")
 
-POINTS = array([
+Boundary_Points = array([
     [HEIGHT_LOWER_BOUND, WEIGHT_LOWER_BOUND],
     [HEIGHT_UPPER_BOUND, WEIGHT_LOWER_BOUND],
     [HEIGHT_UPPER_BOUND, WEIGHT_UPPER_BOUND],
@@ -74,7 +71,7 @@ POINTS = array([
     [HEIGHT_LOWER_BOUND, WEIGHT_LOWER_BOUND]
 ])
 
-plot(POINTS[:, 0], POINTS[:, 1],
+plot(Boundary_Points[:, 0], Boundary_Points[:, 1],
      color="red", label="Working Boundary")
 plot([HEIGHT_MEAN, HEIGHT_MEAN],
      [WEIGHT_LOWER_BOUND, WEIGHT_UPPER_BOUND],
