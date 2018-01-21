@@ -1,17 +1,17 @@
 """
-this will find mean value and standard deviation
-    and finds minimum values and maximum values based on those.
+this will find mean value and standard deviation 
+    and finds minimum values and maximum values based on those. 
 any point greater then maximum or lesser then minimum will be an outlier
 """
 
-from matplotlib.pyplot import legend, plot, scatter, show
+from matplotlib.pyplot import legend, plot, scatter, show, title
 from numpy import append, array, mean, std, tan
 from sklearn.linear_model import LinearRegression
 
-HEIGHT = array([58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71,
-                72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86])
-WEIGHT = array([115, 117, 120, 123, 126, 129, 132, 135, 139, 142, 146, 150, 154, 159,
-                164, 164, 168, 171, 175, 178, 182, 185, 188, 192, 195, 199, 202, 206, 209])
+HEIGHT = array([58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70,
+                71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86])
+WEIGHT = array([115, 117, 120, 123, 126, 129, 132, 135, 139, 142, 146, 150, 154,
+                159, 164, 164, 168, 171, 175, 178, 182, 185, 188, 192, 195, 199, 202, 206, 209])
 
 HEIGHT_MEAN = mean(HEIGHT)
 HEIGHT_STD = std(HEIGHT)
@@ -36,9 +36,9 @@ valid_points.shape = (int(len(valid_points) / 2), 2)
 invalid_points.shape = (int(len(invalid_points) / 2), 2)
 
 scatter(valid_points[:, 0], valid_points[:, 1],
-        marker="o", color="blue")
+        marker="o", color="blue", label="Valid Points")
 scatter(invalid_points[:, 0], invalid_points[:, 1],
-        marker="*", color="red")
+        marker="*", color="red", label="Invalid Points")
 
 valid_x = valid_points[:, 0]
 valid_x.shape = (len(valid_x), 1)
@@ -50,9 +50,21 @@ Linear_Model.fit(valid_x, valid_y)
 coef = Linear_Model.coef_
 intercept = Linear_Model.intercept_
 
-plot(valid_x, valid_x * coef + intercept * 0.5)
 plot(valid_x, valid_x * coef + intercept)
-plot(valid_x, valid_x * coef + intercept * 1.5)
+
+plot(valid_x, valid_x * coef + intercept * 0.5,
+     color="grey", label="Experimental Boundary")
+plot(valid_x, valid_x * coef + intercept * 1.5,
+     color="grey", label="Experimental Boundary")
+
+plot([min(valid_x), min(valid_x)],
+     [min(valid_x * coef + intercept * 0.5),
+      min(valid_x * coef + intercept * 1.5)],
+     color="grey", label="Experimental Boundary")
+plot([max(valid_x), max(valid_x)],
+     [max(valid_x * coef + intercept * 0.5),
+      max(valid_x * coef + intercept * 1.5)],
+     color="grey", label="Experimental Boundary")
 
 POINTS = array([
     [HEIGHT_LOWER_BOUND, WEIGHT_LOWER_BOUND],
@@ -63,13 +75,14 @@ POINTS = array([
 ])
 
 plot(POINTS[:, 0], POINTS[:, 1],
-     color="red", label="Boundary")
+     color="red", label="Working Boundary")
 plot([HEIGHT_MEAN, HEIGHT_MEAN],
      [WEIGHT_LOWER_BOUND, WEIGHT_UPPER_BOUND],
-     color="orange", label="Mean Line")
+     color="orange", label="Mean Lines")
 plot([HEIGHT_LOWER_BOUND, HEIGHT_UPPER_BOUND],
      [WEIGHT_MEAN, WEIGHT_MEAN],
-     color="orange", label="Mean Line")
+     color="orange", label="Mean Lines")
 
+title("Anomaly Detection")
 legend()
 show()
