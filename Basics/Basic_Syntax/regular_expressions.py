@@ -3,7 +3,7 @@ from re import findall, match, search
 inpstrng = input("input string : ")
 key = input("input key : ")
 
-if(match(key, inpstrng)):
+if match(key, inpstrng):
     print("re.match - Match")
 else:
     print("re.match - No match")
