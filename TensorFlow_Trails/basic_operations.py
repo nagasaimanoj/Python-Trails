@@ -1,5 +1,10 @@
-from tensorflow import (Session, add, constant, int16,
-                        matmul, multiply, placeholder)
+from tensorflow import (Session,  # to start TF session
+                        add,  # arithematic add operation
+                        constant,  # to declare constant variables
+                        int16,  # data type for variables
+                        matmul,  # for matrix multiplication
+                        multiply,  # arithematic product operation
+                        placeholder)  # placeholder for function parameters
 
 # declaring constants a & b
 a = constant(2)
