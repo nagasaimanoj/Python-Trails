@@ -1,4 +1,4 @@
-from matplotlib.pyplot import grid, plot, show, title, xlabel, ylabel
+from matplotlib.pyplot import (grid, plot, show, title, xlabel, ylabel)
 
 x = [1, 2, 3, 4, 5, 6]
 y = [20, 3, 40, 5, 60, 7]
