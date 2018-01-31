@@ -32,8 +32,8 @@ print("a + b :", Session().run(randFun1, feed_dict={var1: 2, var2: 3}))
 print("a * b :", Session().run(randFun2, feed_dict={var1: 2, var2: 3}))
 
 # creating matrices matrix1 & matrix2
-matrix1 = constant([[3., 3.]])
-matrix2 = constant([[2.], [2.]])
+matrix1 = constant([[3., 3.], [1., 1.]])
+matrix2 = constant([[1., 0.], [0., 1.]])
 
 # printing matrices multiplication
 print("matrix multiplication :")
