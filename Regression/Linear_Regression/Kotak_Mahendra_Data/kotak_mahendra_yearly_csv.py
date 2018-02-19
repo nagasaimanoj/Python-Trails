@@ -1,9 +1,12 @@
-from csv import reader
-from os.path import dirname
+from csv import reader  # to read CSV files
+from os.path import dirname  # to get current python file's path
 
-from matplotlib.pyplot import plot, show
-from numpy import append, arange, array
-from sklearn.linear_model import LinearRegression
+from matplotlib.pyplot import (plot,  # to draw lines with datasets
+                               show)  # to display populated charts
+from numpy import (append,  # to append an array with another
+                   arange,  # to generate array with series of numbers
+                   array)  # to create a numpy array
+from sklearn.linear_model import LinearRegression  # linear regression model
 
 # reading CSV file from local disk
 csv_file = open(dirname(__file__) + "\\" + "data.csv")

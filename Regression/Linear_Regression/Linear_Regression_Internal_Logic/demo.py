@@ -1,8 +1,6 @@
-# dirname gives current file path
-from os.path import dirname
-
-# genfromtxt will read csv as array & mean will calculate average
-from numpy import genfromtxt, mean
+from os.path import dirname  # dirname gives current file path
+from numpy import (genfromtxt,  # to get numeric values as N-d array from CSV file
+                   mean)  # to calculate average
 
 # reading csv file as an array
 DATA_POINTS = genfromtxt(dirname(__file__) + "\\" + "data.csv", delimiter=",")
@@ -28,7 +26,7 @@ for i in range(data_num_iterations):
     # using that average change to adjust slope
     data_slope += sum(DATA_POINTS[:, 0]) * avg_change * learning_rate
 
-# printing output values one by one
+# printing model's attributes
 print("intercept =", data_intercept)
 print("slope =", data_slope)
 print("average error =", mean(
