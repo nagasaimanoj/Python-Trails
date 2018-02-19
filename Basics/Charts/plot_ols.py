@@ -1,7 +1,13 @@
-from matplotlib.pyplot import plot, scatter, show, xticks, yticks
+from matplotlib.pyplot import (plot,  # to draw lines with datasets
+                               scatter,  # to plot dots with datasets
+                               show,  # to display populated charts
+                               xticks,
+                               yticks)
 from numpy import newaxis
-from sklearn import datasets, linear_model
-from sklearn.metrics import mean_squared_error, r2_score
+from sklearn import (datasets,
+                     linear_model)
+from sklearn.metrics import (mean_squared_error,
+                             r2_score)
 
 # Load the diabetes dataset
 diabetes = datasets.load_diabetes()

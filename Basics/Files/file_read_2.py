@@ -1,4 +1,4 @@
-from os.path import dirname
+from os.path import dirname  # to get current python file's path
 
 SAMPLE_FILE = open(dirname(__file__) + "\\" + "sample.txt", "r")
 print(SAMPLE_FILE.read(10))

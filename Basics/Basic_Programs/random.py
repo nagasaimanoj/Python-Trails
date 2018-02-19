@@ -1,4 +1,4 @@
-from random import randint
+from random import randint  # to get random from a given range
 
 from numpy.random import seed
 
