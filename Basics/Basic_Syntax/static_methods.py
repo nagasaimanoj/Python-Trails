@@ -12,5 +12,3 @@ Pizza:
 ingredients = ["cheese", "onions", "spam"]
 if all(Pizza.validate_topping(i) for i in ingredients):
     pizza = Pizza(ingredients)
-
-input("\n\n----------\nHit enter to close\n")

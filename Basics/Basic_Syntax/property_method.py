@@ -10,5 +10,3 @@ class Pizza:
 pizza = Pizza(["cheese", "tomato"])
 print(pizza.pineapple_allowed)
 pizza.pineapple_allowed = True
-
-input("\n\n----------\nHit enter to close\n")
