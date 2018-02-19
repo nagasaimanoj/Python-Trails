@@ -1,6 +1,5 @@
 from random import randint
 
-
 def choose_a_place():
     options = int(input("how many options do you have ? : "))
     describe = input("do you want to name them...? (y/n) : ")
@@ -12,7 +11,6 @@ def choose_a_place():
         print("go with " + a[randint(1, options - 1)])
     elif(describe in ('n', 'N')):
         print("go with option " + str(randint(1, options - 1)))
-
 
 while(True):
     choose_a_place()
