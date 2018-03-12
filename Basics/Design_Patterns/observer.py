@@ -11,7 +11,6 @@ class Publisher(object):
         for user in self.users:
             user.notify(message)
 
-
 class Subscriber(object):
 
     def __init__(self, username):
@@ -20,15 +19,12 @@ class Subscriber(object):
     def notify(self, message):
         print(self.username, 'received message:', message)
 
-
 publisher = Publisher()
 
-# Create observers that will receive notifications
 bucky = Subscriber('Bucky')
 manoj = Subscriber('Manoj')
 publisher.register(bucky)
 publisher.register(manoj)
 
-# Notifications are sent to every observer (subscriber)
 publisher.send_notifications('We updated the website')
 publisher.send_notifications('Make sure to add a profile picture')

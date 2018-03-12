@@ -1,7 +1,5 @@
-from subprocess import call  # to run a terminal command
+from subprocess import call
 
-# getting a file's path and name
 file = input(r"drop a python file here : ")
 
-# running terminal script on that file
 call(['python', file])

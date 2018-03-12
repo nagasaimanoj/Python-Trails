@@ -1,4 +1,3 @@
-from sys import exit # to exit out of python execution
+from sys import exit
 
-# exiting out
 exit()

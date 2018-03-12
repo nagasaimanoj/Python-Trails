@@ -16,11 +16,7 @@ class Singleton(object):
 
 a = Singleton()
 
-# Once a singleton is created, all instances of this class will use the same object
 print('Creating instance', Singleton.get_instance())
 
-# Since singleton already created, the existing object is returned
 b = Singleton()
-
-# Even though we now have 3 different instances of this class, they all reference the same object
 c = Singleton()

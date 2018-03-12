@@ -1,4 +1,4 @@
-from os.path import dirname  # to get current python file's path
+from os.path import dirname
 
 SAMPLE_FILE = open(dirname(__file__) + "\\" + "sample.txt", 'w')
 SAMPLE_FILE.write("hello again")
