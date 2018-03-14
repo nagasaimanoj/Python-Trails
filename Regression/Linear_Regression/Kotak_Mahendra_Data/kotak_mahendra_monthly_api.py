@@ -1,10 +1,8 @@
-from matplotlib.pyplot import (plot,  # to draw lines with datasets
-                               show)  # to display populated charts
-from numpy import (append,  # to append an array with another
-                   array)  # to create a numpy array
-from sklearn.linear_model import LinearRegression  # linear regression model
+from matplotlib.pyplot import (plot, show)
+from numpy import (append, array)
+from sklearn.linear_model import LinearRegression
 
-from quandl import get  # to get some dataset from quandl source
+from quandl import get
 
 csv_file = list(get("NSE/KOTAKNIFTY",
                     authtoken="qAsk6MJV-VXWMqoWDJQk", returns='numpy'))

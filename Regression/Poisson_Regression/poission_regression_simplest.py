@@ -2,7 +2,6 @@ from matplotlib.pyplot import plot, show
 from numpy import append, array, count_nonzero, unique
 from scipy.stats import poisson
 
-# collecting goal_count data per match
 FOOTBALL_MATCH_DATA = array([0, 0, 1, 2, 2, 1, 1, 3, 1, 2, 2, 2, 0, 1, 0, 1, 1, 1, 1, 1,
                              3, 1, 1, 0, 2, 1, 1, 1, 3, 0, 2, 1, 1, 4, 1, 1, 0, 2, 2, 0,
                              1, 3, 1, 3, 4, 4, 4, 1, 1, 3, 3, 1, 5, 4, 1, 1, 2, 1, 0, 2,

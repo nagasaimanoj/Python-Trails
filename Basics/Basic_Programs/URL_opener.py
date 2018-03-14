@@ -1,4 +1,4 @@
-from os import startfile  # to Start a file with its associated application
+from os import startfile
 
 url = input("enter website url : ")
 
