@@ -1,12 +1,12 @@
 num = int(input("Enter range : "))
 
 for i in range(1, num + 1):
-    text = str(i)
+    result = str(i)
 
     if(i % 3 == 0):
-        text += " - Fizz"
+        result += " - Fizz"
 
     if(i % 5 == 0):
-        text += " - Buzz"
+        result += " - Buzz"
 
-    print(text)
+    print(result)
