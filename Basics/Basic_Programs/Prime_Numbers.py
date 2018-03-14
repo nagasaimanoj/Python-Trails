@@ -10,4 +10,7 @@ for i in range(2, n):
     if(is_prime):
         prime_numbers.insert(len(prime_numbers), i)
 
-print(prime_numbers)
+if(prime_numbers):
+    print(prime_numbers)
+else:
+    print("no prime numbers till", n)
