@@ -1,28 +1,18 @@
-from human import human
-from flask import Flask,render_template, request, jsonify
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
 userList = []
-id = 1
 
-@app.route("/")
+
+@app.route("/", methods=['POST', 'GET'])
 def hello():
-    return render_template('home.html', content = userList)
 
-@app.route("/", methods=['POST'])
-def hello2():
-    hhh = human()
-    id += 1
+    if request.method == 'POST':
+        uname = request.form['uname']
+        userList.append(uname)
 
-    hhh.setName(request.form['uname'])
+    return render_template('home.html', content=userList)
 
-    userList.append(id, hhh)
 
-    return render_template('home.html', content = userList)
-
-@app.route("/del", methods=['POST'])
-def delete():
-    del userList[request.form['uname']]
-
-app.run(debug = True)
+app.run()
