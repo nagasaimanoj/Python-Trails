@@ -1,16 +1,15 @@
-<body>
-    <table>
-        <tr>
-            <form action='/addItem' method='POST'>
-                <th>
-                    <input type='text' autofocus placeholder='User Name' name='uname' value='{{ value }}' />
-                </th>
-            </form>
-        </tr>
-        {% for item in userList %}
-        <tr>
-            <td>
-                <a href='deleteItem?name={{ item }}' </a>{% print(item) %}</a>
-            </td>
-        </tr>
-        {% endfor %}
+<table>
+    <tr>
+        <form action='/addItem' method='POST'>
+            <th>
+                <input type='text' autofocus placeholder='User Name' name='uname' value='{{ value }}' />
+            </th>
+        </form>
+    </tr>
+    {% for item in userList %}
+    <tr>
+        <td>
+            <a href='deleteItem?name={{ item }}' </a>{% print(item) %}</a>
+        </td>
+    </tr>
+    {% endfor %}
