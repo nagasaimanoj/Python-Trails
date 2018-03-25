@@ -24,5 +24,12 @@ def deleteItem():
     return redirect('/')
 
 
+@app.route('/editItem', methods=['GET'])
+def editItem():
+    name = request.args.get('name')
+    userList.remove(name)
+    return render_template('home.html', userList=userList, value=name)
+
+
 if __name__ == '__main__':
     app.run(debug=True)
