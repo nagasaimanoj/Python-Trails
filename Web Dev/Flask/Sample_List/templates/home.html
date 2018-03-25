@@ -1,15 +1,34 @@
-<table>
-    <tr>
-        <form action='/addItem' method='POST'>
-            <th>
-                <input type='text' autofocus placeholder='User Name' name='uname' value='{{ value }}' />
-            </th>
-        </form>
-    </tr>
-    {% for item in userList %}
-    <tr>
-        <td>
-            <a href='deleteItem?name={{ item }}' </a>{% print(item) %}</a>
-        </td>
-    </tr>
-    {% endfor %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Flask_Sample_List</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <table class='table-condensed'>
+        <tr>
+            <form action='/addItem' method='POST'>
+                <th colspan=3>
+                    <input class="form-control" type='text' autofocus placeholder='User Name' name='uname' value='{{ value }}' />
+                </th>
+            </form>
+        </tr>
+        {% for item in userList %}
+        <tr>
+            <td>
+                <p>{% print(item) %}</p>
+            </td>
+            <td>
+                <a href='deleteItem?name={{ item }}' </a> remove </a>
+            </td>
+            <td>
+                <a href='editItem?name={{ item }}' </a> edit </a>
+            </td>
+        </tr>
+        {% endfor %}
