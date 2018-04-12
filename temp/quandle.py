@@ -1,3 +1,4 @@
 from quandl import get
 
-print(get("NSE/KOTAKNIFTY", authtoken="qAsk6MJV-VXWMqoWDJQk"))
+if __name__ == "__main__":
+    print(get("NSE/KOTAKNIFTY", authtoken="qAsk6MJV-VXWMqoWDJQk"))
