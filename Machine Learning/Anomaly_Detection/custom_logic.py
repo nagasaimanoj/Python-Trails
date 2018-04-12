@@ -27,7 +27,8 @@ valid_points = array([], dtype='int')
 invalid_points = array([], dtype='int')
 
 for i in range(len(HEIGHT)):
-    if((HEIGHT_LOWER_BOUND < HEIGHT[i] < HEIGHT_UPPER_BOUND)and(WEIGHT_LOWER_BOUND < WEIGHT[i] < WEIGHT_UPPER_BOUND)):
+    if ((HEIGHT_LOWER_BOUND < HEIGHT[i] < HEIGHT_UPPER_BOUND) and (
+            WEIGHT_LOWER_BOUND < WEIGHT[i] < WEIGHT_UPPER_BOUND)):
         valid_points = append(valid_points, [[HEIGHT[i], WEIGHT[i]]])
     else:
         invalid_points = append(invalid_points, [[HEIGHT[i], WEIGHT[i]]])

@@ -21,7 +21,7 @@ Y_UPPER = Y_MEAN + Y_STD + Y_STD
 Y_LOWER = Y_MEAN - Y_STD - Y_STD
 
 for i in range(len(X_DATA)):
-    if(X_LOWER < X_DATA[i] < X_UPPER and Y_LOWER < Y_DATA[i] < Y_UPPER):
+    if (X_LOWER < X_DATA[i] < X_UPPER and Y_LOWER < Y_DATA[i] < Y_UPPER):
         plot(X_DATA[i], Y_DATA[i], 'bx')
     else:
         plot(X_DATA[i], Y_DATA[i], 'rx')

@@ -1,4 +1,5 @@
 from os.path import dirname
+
 from numpy import (genfromtxt, mean)
 
 DATA_POINTS = genfromtxt(dirname(__file__) + "\\" + "data.csv", delimiter=",")

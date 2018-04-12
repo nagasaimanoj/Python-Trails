@@ -1,8 +1,7 @@
 from matplotlib.pyplot import (plot, show)
 from numpy import (append, array)
-from sklearn.linear_model import LinearRegression
-
 from quandl import get
+from sklearn.linear_model import LinearRegression
 
 csv_file = list(get("NSE/KOTAKNIFTY",
                     authtoken="qAsk6MJV-VXWMqoWDJQk", returns='numpy'))
