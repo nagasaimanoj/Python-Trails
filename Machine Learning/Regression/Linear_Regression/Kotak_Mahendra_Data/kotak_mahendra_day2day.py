@@ -4,8 +4,10 @@ from quandl import get
 from sklearn.linear_model import LinearRegression
 
 if __name__ == "__main__":
-    KOTAK_csv_file = list(get("NSE/KOTAKNIFTY",
-                              authtoken="qAsk6MJV-VXWMqoWDJQk", returns='numpy'))
+    KOTAK_csv_file = list(
+        get("NSE/KOTAKNIFTY",
+            authtoken="qAsk6MJV-VXWMqoWDJQk",
+            returns='numpy'))
 
     KOTAK_x_data = []
     KOTAK_y_data = []
