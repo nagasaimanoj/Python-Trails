@@ -1,4 +1,4 @@
-class Singleton(object):
+class Singleton():
     __instance = None
 
     def __init__(self):
@@ -14,9 +14,10 @@ class Singleton(object):
         return cls.__instance
 
 
-a = Singleton()
+if __name__ == "__main__":
+    a = Singleton()
 
-print('Creating instance', Singleton.get_instance())
+    print('Creating instance', Singleton.get_instance())
 
-b = Singleton()
-c = Singleton()
+    b = Singleton()
+    c = Singleton()

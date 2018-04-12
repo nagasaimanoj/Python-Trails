@@ -1,5 +1,4 @@
 class Person:
-
     @property
     def val(self):
         pass
@@ -15,6 +14,7 @@ class Person:
         return self._val
 
 
-p = Person()
-p.val = 30
-print(p.val)
+if __name__ == "__main__":
+    p = Person()
+    p.val = 30
+    print(p.val)

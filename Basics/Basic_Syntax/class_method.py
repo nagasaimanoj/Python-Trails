@@ -11,5 +11,6 @@ class Rectangle:
         return cls(side_length, side_length)
 
 
-square = Rectangle.new_square(5)
-print(square.calculate_area())
+if __name__ == "__main__":
+    square = Rectangle.new_square(5)
+    print(square.calculate_area())

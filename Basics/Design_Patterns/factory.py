@@ -1,7 +1,7 @@
 from random import randrange
 
 
-class Weapon(object):
+class Weapon():
     name = None
     cost = None
 
@@ -23,6 +23,7 @@ class Gun(Weapon):
     cost = 300.00
 
 
-for _ in range(25):
-    w = Weapon.get_weapon(randrange(2))
-    print(w.name, w.cost)
+if __name__ == "__main__":
+    for _ in range(25):
+        w = Weapon.get_weapon(randrange(2))
+        print(w.name, w.cost)

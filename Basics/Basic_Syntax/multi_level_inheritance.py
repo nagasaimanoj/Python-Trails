@@ -13,4 +13,5 @@ class child(parent):
         print("from child")
 
 
-obj = child()
+if __name__ == "__main__":
+    obj = child()

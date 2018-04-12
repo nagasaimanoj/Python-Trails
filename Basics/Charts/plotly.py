@@ -1,3 +1,4 @@
 from plotly.offline import plot
 
-plot({'data': [{'y': [4, 2, 3, 4]}]})
+if __name__ == "__main__":
+    plot({'data': [{'y': [4, 2, 3, 4]}]})

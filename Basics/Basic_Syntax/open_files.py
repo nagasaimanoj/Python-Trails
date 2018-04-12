@@ -1,5 +1,6 @@
 from subprocess import call
 
-file = input(r"drop a python file here : ")
+if __name__ == "__main__":
+    file = input(r"drop a python file here : ")
 
-call(['python', file])
+    call(['python', file])

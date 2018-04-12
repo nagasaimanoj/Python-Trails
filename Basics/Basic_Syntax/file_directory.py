@@ -1,3 +1,4 @@
 from os.path import dirname
 
-print(dirname(__file__))
+if __name__ == "__main__":
+    print(dirname(__file__))

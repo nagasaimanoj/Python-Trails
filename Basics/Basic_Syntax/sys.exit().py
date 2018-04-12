@@ -1,3 +1,4 @@
 from sys import exit
 
-exit()
+if __name__ == "__main__":
+    exit()

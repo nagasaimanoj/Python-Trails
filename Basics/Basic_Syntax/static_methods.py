@@ -12,7 +12,7 @@ def validate_topping(topping):
     else:
         return True
 
-
-ingredients = ["cheese", "onions", "spam"]
-if all(Pizza.validate_topping(i) for i in ingredients):
-    pizza = Pizza(ingredients)
+if __name__ == "__main__":
+    ingredients = ["cheese", "onions", "spam"]
+    if all(Pizza.validate_topping(i) for i in ingredients):
+        pizza = Pizza(ingredients)

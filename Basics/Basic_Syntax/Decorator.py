@@ -15,6 +15,6 @@ def someXlogic(someFunc):
 def myLogic(a, b):
     print(a + b)
 
-
-# calling in normal way. but decorator will get involved
-myLogic(1, 2)
+if __name__ == "__main__":
+    # calling in normal way. but decorator will get involved
+    myLogic(1, 2)

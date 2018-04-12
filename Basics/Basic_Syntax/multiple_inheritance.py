@@ -12,4 +12,5 @@ class child(parent2, parent1):
     pass
 
 
-obj = child()
+if __name__ == "__main__":
+    obj = child()

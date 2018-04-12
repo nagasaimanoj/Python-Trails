@@ -1,7 +1,7 @@
 class class_trail:
-
     def __init__(self, x, y):
         print(float(x * y))
 
 
-class_trail(1, 2)
+if __name__ == "__main__":
+    class_trail(1, 2)

@@ -1,4 +1,4 @@
-class Publisher(object):
+class Publisher():
     users = set()
 
     def register(self, user):
@@ -12,8 +12,7 @@ class Publisher(object):
             user.notify(message)
 
 
-class Subscriber(object):
-
+class Subscriber():
     def __init__(self, username):
         self.username = username
 
@@ -21,12 +20,13 @@ class Subscriber(object):
         print(self.username, 'received message:', message)
 
 
-publisher = Publisher()
+if __name__ == "__main__":
+    publisher = Publisher()
 
-bucky = Subscriber('Bucky')
-manoj = Subscriber('Manoj')
-publisher.register(bucky)
-publisher.register(manoj)
+    bucky = Subscriber('Bucky')
+    manoj = Subscriber('Manoj')
+    publisher.register(bucky)
+    publisher.register(manoj)
 
-publisher.send_notifications('We updated the website')
-publisher.send_notifications('Make sure to add a profile picture')
+    publisher.send_notifications('We updated the website')
+    publisher.send_notifications('Make sure to add a profile picture')

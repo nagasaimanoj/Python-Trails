@@ -7,10 +7,11 @@ class someClass:
         return someClass(self.x + other.x, self.y + other.y)
 
 
-first = someClass(5, 7)
-second = someClass(3, 9)
+if __name__ == "__main__":
+    first = someClass(5, 7)
+    second = someClass(3, 9)
 
-result = first + second
+    result = first + second
 
-print(result.x)
-print(result.y)
+    print(result.x)
+    print(result.y)

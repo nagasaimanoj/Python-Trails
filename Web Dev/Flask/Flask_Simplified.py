@@ -8,4 +8,5 @@ def home_page():
     return "<h1>Hello Flask</h1>"
 
 
-app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)

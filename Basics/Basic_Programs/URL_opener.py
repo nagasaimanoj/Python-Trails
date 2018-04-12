@@ -1,5 +1,6 @@
 from os import startfile
 
-url = input("enter website url : ")
+if __name__ == "__main__":
+    url = input("enter website url : ")
 
-startfile(url)
+    startfile(url)
