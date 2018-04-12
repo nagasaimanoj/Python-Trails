@@ -9,7 +9,7 @@ for i in range(10):
     if i == 0:
         p = imshow(z)
         fig = gcf()
-        clim()   # clamp the color limits
+        clim()  # clamp the color limits
         title("Boring slide show")
     else:
         z = z + 2

@@ -24,7 +24,7 @@ print("Mean squared error: %.2f"
       % mean_squared_error(diabetes_y_test, diabetes_y_pred))
 print('Variance score: %.2f' % r2_score(diabetes_y_test, diabetes_y_pred))
 
-scatter(diabetes_X_test, diabetes_y_test,  color='black')
+scatter(diabetes_X_test, diabetes_y_test, color='black')
 plot(diabetes_X_test, diabetes_y_pred, color='blue', linewidth=3)
 
 xticks(())

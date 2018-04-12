@@ -1,8 +1,8 @@
 import matplotlib.pyplot as plt
-from numpy import pi, sin, linspace
 from matplotlib.mlab import stineman_interp
+from numpy import pi, sin, linspace
 
-x = linspace(0, 2*pi, 20)
+x = linspace(0, 2 * pi, 20)
 y = sin(x)
 yp = None
 xi = linspace(x[0], x[-1], 100)

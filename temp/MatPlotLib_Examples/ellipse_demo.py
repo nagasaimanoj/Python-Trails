@@ -1,5 +1,5 @@
-from matplotlib.pyplot import figure, show
 from matplotlib.patches import Ellipse
+from matplotlib.pyplot import figure, show
 
 ells = Ellipse(angle=130, width=5, height=3, xy=[5.0, 2.0])
 

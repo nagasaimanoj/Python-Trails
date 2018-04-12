@@ -7,15 +7,16 @@ N       Classic     Base renderer    Ext renderer
 50000    19.30          6.53            1.98
 """
 from __future__ import print_function  # only needed for python 2.x
-import matplotlib.pyplot as plt
-import numpy as np
 
 import time
 
+import matplotlib.pyplot as plt
+import numpy as np
+
 for N in (20, 100, 1000, 10000, 50000):
     tstart = time.time()
-    x = 0.9*np.random.rand(N)
-    y = 0.9*np.random.rand(N)
-    s = 20*np.random.rand(N)
+    x = 0.9 * np.random.rand(N)
+    y = 0.9 * np.random.rand(N)
+    s = 20 * np.random.rand(N)
     plt.scatter(x, y, s)
     print('%d symbols in %1.2f s' % (N, time.time() - tstart))

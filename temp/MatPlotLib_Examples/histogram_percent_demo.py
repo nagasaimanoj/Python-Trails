@@ -1,7 +1,7 @@
 import matplotlib
-from numpy.random import randn
 import matplotlib.pyplot as plt
 from matplotlib.ticker import FuncFormatter
+from numpy.random import randn
 
 
 def to_percent(y, position):
@@ -14,6 +14,7 @@ def to_percent(y, position):
         return s + r'$\%$'
     else:
         return s + '%'
+
 
 x = randn(5000)
 

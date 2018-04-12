@@ -1,5 +1,5 @@
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 from matplotlib.colors import LinearSegmentedColormap
 
 """
@@ -70,10 +70,9 @@ never used.
 # Make some illustrative fake data:
 
 x = np.arange(0, np.pi, 0.1)
-y = np.arange(0, 2*np.pi, 0.1)
+y = np.arange(0, 2 * np.pi, 0.1)
 X, Y = np.meshgrid(x, y)
 Z = np.cos(X) * np.sin(Y) * 10
-
 
 # --- Colormaps from a list ---
 
@@ -91,61 +90,59 @@ for n_bin, ax in zip(n_bins, axs.ravel()):
     ax.set_title("N bins: %s" % n_bin)
     fig.colorbar(im, ax=ax)
 
-
 # --- Custom colormaps ---
 
-cdict1 = {'red':   ((0.0, 0.0, 0.0),
-                   (0.5, 0.0, 0.1),
-                   (1.0, 1.0, 1.0)),
+cdict1 = {'red': ((0.0, 0.0, 0.0),
+                  (0.5, 0.0, 0.1),
+                  (1.0, 1.0, 1.0)),
 
-         'green': ((0.0, 0.0, 0.0),
-                   (1.0, 0.0, 0.0)),
+          'green': ((0.0, 0.0, 0.0),
+                    (1.0, 0.0, 0.0)),
 
-         'blue':  ((0.0, 0.0, 1.0),
+          'blue': ((0.0, 0.0, 1.0),
                    (0.5, 0.1, 0.0),
                    (1.0, 0.0, 0.0))
-        }
+          }
 
-cdict2 = {'red':   ((0.0, 0.0, 0.0),
-                   (0.5, 0.0, 1.0),
-                   (1.0, 0.1, 1.0)),
+cdict2 = {'red': ((0.0, 0.0, 0.0),
+                  (0.5, 0.0, 1.0),
+                  (1.0, 0.1, 1.0)),
 
-         'green': ((0.0, 0.0, 0.0),
-                   (1.0, 0.0, 0.0)),
+          'green': ((0.0, 0.0, 0.0),
+                    (1.0, 0.0, 0.0)),
 
-         'blue':  ((0.0, 0.0, 0.1),
+          'blue': ((0.0, 0.0, 0.1),
                    (0.5, 1.0, 0.0),
                    (1.0, 0.0, 0.0))
-        }
+          }
 
-cdict3 = {'red':  ((0.0, 0.0, 0.0),
-                   (0.25, 0.0, 0.0),
-                   (0.5, 0.8, 1.0),
-                   (0.75, 1.0, 1.0),
-                   (1.0, 0.4, 1.0)),
+cdict3 = {'red': ((0.0, 0.0, 0.0),
+                  (0.25, 0.0, 0.0),
+                  (0.5, 0.8, 1.0),
+                  (0.75, 1.0, 1.0),
+                  (1.0, 0.4, 1.0)),
 
-         'green': ((0.0, 0.0, 0.0),
-                   (0.25, 0.0, 0.0),
-                   (0.5, 0.9, 0.9),
-                   (0.75, 0.0, 0.0),
-                   (1.0, 0.0, 0.0)),
+          'green': ((0.0, 0.0, 0.0),
+                    (0.25, 0.0, 0.0),
+                    (0.5, 0.9, 0.9),
+                    (0.75, 0.0, 0.0),
+                    (1.0, 0.0, 0.0)),
 
-         'blue':  ((0.0, 0.0, 0.4),
+          'blue': ((0.0, 0.0, 0.4),
                    (0.25, 1.0, 1.0),
                    (0.5, 1.0, 0.8),
                    (0.75, 0.0, 0.0),
                    (1.0, 0.0, 0.0))
-        }
+          }
 
 # Make a modified version of cdict3 with some transparency
 # in the middle of the range.
 cdict4 = cdict3.copy()
 cdict4['alpha'] = ((0.0, 1.0, 1.0),
-                #   (0.25,1.0, 1.0),
+                   #   (0.25,1.0, 1.0),
                    (0.5, 0.3, 0.3),
-                #   (0.75,1.0, 1.0),
+                   #   (0.75,1.0, 1.0),
                    (1.0, 1.0, 1.0))
-
 
 # Now we will use this example to illustrate 3 ways of
 # handling custom colormaps.
@@ -199,7 +196,7 @@ axs[0, 1].set_title("Alpha = 1")
 #
 
 # Draw a line with low zorder so it will be behind the image.
-axs[1, 1].plot([0, 10*np.pi], [0, 20*np.pi], color='c', lw=20, zorder=-1)
+axs[1, 1].plot([0, 10 * np.pi], [0, 20 * np.pi], color='c', lw=20, zorder=-1)
 
 im4 = axs[1, 1].imshow(Z, interpolation='nearest')
 fig.colorbar(im4, ax=axs[1, 1])

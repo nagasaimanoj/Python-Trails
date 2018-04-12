@@ -8,17 +8,18 @@ A very simple 'animation' of a 3D plot.  See also rotate_axes3d_demo.
 
 from __future__ import print_function
 
-from mpl_toolkits.mplot3d import axes3d
+import time
+
 import matplotlib.pyplot as plt
 import numpy as np
-import time
+from mpl_toolkits.mplot3d import axes3d
 
 
 def generate(X, Y, phi):
     '''
     Generates Z data for the points in the X, Y meshgrid and parameter phi.
     '''
-    R = 1 - np.sqrt(X**2 + Y**2)
+    R = 1 - np.sqrt(X ** 2 + Y ** 2)
     return np.cos(2 * np.pi * X + phi) * R
 
 

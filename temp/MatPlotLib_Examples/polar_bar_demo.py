@@ -5,9 +5,8 @@ Pie chart on polar axis
 
 Demo of bar plot on a polar axis.
 """
-import numpy as np
 import matplotlib.pyplot as plt
-
+import numpy as np
 
 # Compute pie slices
 N = 20

@@ -5,11 +5,11 @@ contour labels.
 See also contour_demo.py.
 """
 import matplotlib
-import numpy as np
 import matplotlib.cm as cm
 import matplotlib.mlab as mlab
-import matplotlib.ticker as ticker
 import matplotlib.pyplot as plt
+import matplotlib.ticker as ticker
+import numpy as np
 
 matplotlib.rcParams['xtick.direction'] = 'out'
 matplotlib.rcParams['ytick.direction'] = 'out'
@@ -46,6 +46,7 @@ class nf(float):
         else:
             return '%.1f' % self.__float__()
 
+
 # Recast levels to new class
 CS.levels = [nf(val) for val in CS.levels]
 
@@ -77,7 +78,7 @@ plt.clabel(CS, CS.levels[::2], inline=True, fmt=fmt, fontsize=10)
 
 plt.figure()
 
-CS = plt.contour(X, Y, 100**Z, locator=plt.LogLocator())
+CS = plt.contour(X, Y, 100 ** Z, locator=plt.LogLocator())
 fmt = ticker.LogFormatterMathtext()
 fmt.create_dummy_axis()
 plt.clabel(CS, CS.levels, fmt=fmt)

@@ -1,9 +1,8 @@
 """
 Simple demo with multiple subplots.
 """
-import numpy as np
 import matplotlib.pyplot as plt
-
+import numpy as np
 
 x1 = np.linspace(0.0, 5.0)
 x2 = np.linspace(0.0, 2.0)

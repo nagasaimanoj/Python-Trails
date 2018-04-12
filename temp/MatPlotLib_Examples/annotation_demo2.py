@@ -1,13 +1,12 @@
 import matplotlib.pyplot as plt
-from matplotlib.patches import Ellipse
 import numpy as np
-
+from matplotlib.patches import Ellipse
 
 fig = plt.figure(1, figsize=(8, 5))
 ax = fig.add_subplot(111, autoscale_on=False, xlim=(-1, 5), ylim=(-4, 3))
 
 t = np.arange(0.0, 5.0, 0.01)
-s = np.cos(2*np.pi*t)
+s = np.cos(2 * np.pi * t)
 line, = ax.plot(t, s, lw=3)
 
 ax.annotate('straight',
@@ -75,7 +74,6 @@ ann = ax.annotate('', xy=(4., 1.), xycoords='data',
                                   connectionstyle="bar",
                                   ec="k",
                                   shrinkA=5, shrinkB=5))
-
 
 fig = plt.figure(2)
 fig.clf()

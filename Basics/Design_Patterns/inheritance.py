@@ -6,15 +6,18 @@ class Enemy(object):
     def move_right(self):
         print('Moving right...')
 
+
 class Ninja(Enemy):
 
     def karate_chop(self):
         print('Karate chop!')
 
+
 class Zombie(Enemy):
 
     def bite(self):
         print('I am biting you!')
+
 
 enemy = Enemy()
 enemy.move_left()

@@ -1,12 +1,12 @@
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 from matplotlib.ticker import NullFormatter
 
 # the random data
 x = np.random.randn(1000)
 y = np.random.randn(1000)
 
-nullfmt = NullFormatter()         # no labels
+nullfmt = NullFormatter()  # no labels
 
 # definitions for the axes
 left, width = 0.1, 0.65
@@ -34,7 +34,7 @@ axScatter.scatter(x, y)
 # now determine nice limits by hand:
 binwidth = 0.25
 xymax = np.max([np.max(np.fabs(x)), np.max(np.fabs(y))])
-lim = (int(xymax/binwidth) + 1) * binwidth
+lim = (int(xymax / binwidth) + 1) * binwidth
 
 axScatter.set_xlim((-lim, lim))
 axScatter.set_ylim((-lim, lim))

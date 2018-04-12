@@ -1,6 +1,6 @@
+import matplotlib.pyplot as plt
 import numpy as np
 from numpy import ma
-import matplotlib.pyplot as plt
 
 x = np.arange(1, 7, 0.4)
 y0 = np.sin(x)

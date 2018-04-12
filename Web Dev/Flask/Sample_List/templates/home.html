@@ -1,13 +1,13 @@
 <html>
 
 <body>
-    <table>
-        <tr>
-            <form action='/addItem' method='POST'>
-                <input type='text' autofocus placeholder='User Name' name='uname' value='{{ value }}' />
-            </form>
-        </tr>
-        {% for item in userList %}
+<table>
+    <tr>
+        <form action='/addItem' method='POST'>
+            <input type='text' autofocus placeholder='User Name' name='uname' value='{{ value }}'/>
+        </form>
+    </tr>
+    {% for item in userList %}
         <tr>
             <td>
                 {% print(item) %}
@@ -19,8 +19,8 @@
                 <a href='editItem?name={{ item }}' </a> edit </a>
             </td>
         </tr>
-        {% endfor %}
-    </table>
+    {% endfor %}
+</table>
 </body>
 
 </html>

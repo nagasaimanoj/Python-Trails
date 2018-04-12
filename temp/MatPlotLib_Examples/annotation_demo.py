@@ -33,11 +33,9 @@ For physical coordinate systems (points or pixels) the origin is the
 (bottom, left) of the figure or axes.
 """
 
-
 import matplotlib.pyplot as plt
-from matplotlib.patches import Ellipse
 import numpy as np
-
+from matplotlib.patches import Ellipse
 
 # If only one location is given, the text and xypoint being
 # annotated are assumed to be the same
@@ -45,7 +43,7 @@ fig = plt.figure()
 ax = fig.add_subplot(111, autoscale_on=False, xlim=(-1, 5), ylim=(-3, 5))
 
 t = np.arange(0.0, 5.0, 0.01)
-s = np.cos(2*np.pi*t)
+s = np.cos(2 * np.pi * t)
 line, = ax.plot(t, s)
 
 ax.annotate('figure pixels',
@@ -80,7 +78,6 @@ ax.annotate('pixel offset from axes fraction',
             horizontalalignment='right',
             verticalalignment='bottom')
 
-
 # You can specify the xypoint and the xytext in different positions and
 # coordinate systems, and optionally turn on a connecting line and mark
 # the point with a marker.  Annotations work on polar axes too.
@@ -91,7 +88,7 @@ ax.annotate('pixel offset from axes fraction',
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='polar')
 r = np.arange(0, 1, 0.001)
-theta = 2*2*np.pi*r
+theta = 2 * 2 * np.pi * r
 line, = ax.plot(theta, r)
 
 ind = 800
@@ -99,12 +96,11 @@ thisr, thistheta = r[ind], theta[ind]
 ax.plot([thistheta], [thisr], 'o')
 ax.annotate('a polar annotation',
             xy=(thistheta, thisr),  # theta, radius
-            xytext=(0.05, 0.05),    # fraction, fraction
+            xytext=(0.05, 0.05),  # fraction, fraction
             textcoords='figure fraction',
             arrowprops=dict(facecolor='black', shrink=0.05),
             horizontalalignment='left',
             verticalalignment='bottom')
-
 
 # You can also use polar notation on a cartesian axes.  Here the native
 # coordinate system ('data') is cartesian, so you need to specify the
@@ -117,8 +113,8 @@ ax = fig.add_subplot(111, aspect='equal')
 ax.add_artist(el)
 el.set_clip_box(ax.bbox)
 ax.annotate('the top',
-            xy=(np.pi/2., 10.),      # theta, radius
-            xytext=(np.pi/3, 20.),   # theta, radius
+            xy=(np.pi / 2., 10.),  # theta, radius
+            xytext=(np.pi / 3, 20.),  # theta, radius
             xycoords='polar',
             textcoords='polar',
             arrowprops=dict(facecolor='black', shrink=0.05),

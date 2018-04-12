@@ -17,9 +17,10 @@ to show.
 """
 
 from __future__ import division
-import numpy as np
-import matplotlib.pyplot as plt
+
 import matplotlib.gridspec as gridspec
+import matplotlib.pyplot as plt
+import numpy as np
 
 # define a list of markevery cases to plot
 cases = [None,
@@ -49,7 +50,7 @@ for i, case in enumerate(cases):
     ax.append(fig1.add_subplot(gs[row, col]))
     ax[-1].set_title('markevery=%s' % str(case))
     ax[-1].plot(x, y, 'o', ls='-', ms=4, markevery=case)
-#fig1.tight_layout()
+# fig1.tight_layout()
 
 # plot each markevery case for log x and y scales
 fig2 = plt.figure(num=2, figsize=figsize)

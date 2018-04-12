@@ -6,10 +6,10 @@ This example demonstrates how to set a hyperlinks on various kinds of elements.
 This currently only works with the SVG backend.
 """
 
-import numpy as np
 import matplotlib.cm as cm
 import matplotlib.mlab as mlab
 import matplotlib.pyplot as plt
+import numpy as np
 
 f = plt.figure()
 s = plt.scatter([1, 2, 3], [4, 5, 6])

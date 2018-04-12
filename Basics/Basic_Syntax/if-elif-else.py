@@ -1,18 +1,17 @@
 # using string
 direction = "Right"
 
-if(direction == "Right"): 
+if (direction == "Right"):
     print("going Right")
-elif(direction == "Left"): 
+elif (direction == "Left"):
     print("going Left")
-else: 
+else:
     print("Unable to Navigate")
-
 
 # using numbers
 value = 0
 
-if(value):
+if (value):
     print("non-zero will be True")
 else:
     print("only 0 is False")
@@ -20,7 +19,7 @@ else:
 # using boolean
 bool_val = True
 
-if(bool_val):
+if (bool_val):
     print("True is acceptable")
 else:
     print("False is not acceptable")
@@ -28,7 +27,7 @@ else:
 # using list
 a = [1]
 
-if(a):
+if (a):
     print("non-empty list is True")
 else:
     print("empty list will be False")

@@ -7,7 +7,6 @@ step_count = 2
 for i in range(initial_value, final_value, step_count):
     print(i)
 
-
 # using list
 
 for i in [1, 2, 4, 8, 16, 32]:

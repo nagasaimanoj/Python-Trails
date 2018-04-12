@@ -1,6 +1,6 @@
-from matplotlib import pyplot as plt
-import numpy as np
 import matplotlib
+import numpy as np
+from matplotlib import pyplot as plt
 
 x = np.arange(0.0, 50.0, 2.0)
 y = x ** 1.3 + np.random.rand(*x.shape) * 30.0
