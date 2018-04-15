@@ -5,7 +5,6 @@ contour labels.
 See also contour_demo.py.
 """
 import matplotlib
-import matplotlib.cm as cm
 import matplotlib.mlab as mlab
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker

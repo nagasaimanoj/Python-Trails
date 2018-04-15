@@ -5,7 +5,7 @@ any point greater then maximum or lesser then minimum will be an outlier
 """
 
 from matplotlib.pyplot import legend, plot, scatter, show, title
-from numpy import append, array, mean, std, tan
+from numpy import append, array, mean, std
 from sklearn.linear_model import LinearRegression
 
 if __name__ == "__main__":
