@@ -2,6 +2,7 @@ from os.path import dirname
 
 from matplotlib.pyplot import plot, show
 from numpy import array, genfromtxt, mean, std
+
 if __name__ == "__main__":
     DATA_SET = genfromtxt(
         dirname(__file__) + "//" + "women.csv", delimiter=",")

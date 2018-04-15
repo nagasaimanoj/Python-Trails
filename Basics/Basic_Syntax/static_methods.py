@@ -1,16 +1,15 @@
-Pizza:
+class Pizza:
 
+    def __init__(self, toppings):
+        self.toppings = toppings
 
-def __init__(self, toppings):
-    self.toppings = toppings
+    @staticmethod
+    def validate_topping(topping):
+        if topping == "pineapple":
+            raise ValueError("No pineapples!")
+        else:
+            return True
 
-
-@staticmethod
-def validate_topping(topping):
-    if topping == "pineapple":
-        raise ValueError("No pineapples!")
-    else:
-        return True
 
 if __name__ == "__main__":
     ingredients = ["cheese", "onions", "spam"]

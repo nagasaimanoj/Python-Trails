@@ -16,7 +16,7 @@ if __name__ == "__main__":
 
         while (mid_val != (start + end) / 2):
             mid_val = (start + end) / 2
-            result = mid_val**root
+            result = mid_val ** root
 
             if (result < num):
                 start = mid_val

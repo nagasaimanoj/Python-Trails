@@ -14,7 +14,7 @@ if __name__ == "__main__":
 
     for i in range(data_num_iterations):
         avg_change = mean(2 / len(DATA_POINTS) * (
-            DATA_POINTS[:, 1] - data_slope * DATA_POINTS[:, 0] + data_intercept
+                DATA_POINTS[:, 1] - data_slope * DATA_POINTS[:, 0] + data_intercept
         ))
 
         data_intercept += avg_change * learning_rate
@@ -25,4 +25,4 @@ if __name__ == "__main__":
     print("slope =", data_slope)
     print("average error =",
           mean((DATA_POINTS[:, 1] -
-                (data_slope * DATA_POINTS[:, 0] + data_intercept))**2))
+                (data_slope * DATA_POINTS[:, 0] + data_intercept)) ** 2))

@@ -40,6 +40,6 @@ if __name__ == "__main__":
     ylabel("Goal Probability")
     legend(
         loc='upper right', fontsize=13, ncol=2).set_title(
-            "Poisson          Actual       ", prop={'size': '14'})
+        "Poisson          Actual       ", prop={'size': '14'})
 
     show()

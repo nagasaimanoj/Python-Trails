@@ -13,5 +13,6 @@ if __name__ == "__main__":
                     print("     ", end=" ")
                 print(self.id)
 
+
     for i in range(10):
         myThread(i).start()

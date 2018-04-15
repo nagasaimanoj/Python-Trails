@@ -3,22 +3,24 @@
 <body>
 <table>
     <tr>
-        <form action='/addItem' method='POST'>
-            <input type='text' autofocus placeholder='User Name' name='uname' value='{{ value }}'/>
-        </form>
+        <td>
+            <form action='/addItem' method='POST'>
+                <input type='text' autofocus placeholder='User Name' name='uname' value='{{ value }}'/>
+            </form>
+        </td>
     </tr>
     {% for item in userList %}
-        <tr>
-            <td>
-                {% print(item) %}
-            </td>
-            <td>
-                <a href='deleteItem?name={{ item }}' </a> remove</a>
-            </td>
-            <td>
-                <a href='editItem?name={{ item }}' </a> edit </a>
-            </td>
-        </tr>
+    <tr>
+        <td>
+            {% print(item) %}
+        </td>
+        <td>
+            <a href='deleteItem?name={{ item }}'> remove</a>
+        </td>
+        <td>
+            <a href='editItem?name={{ item }}'> edit </a>
+        </td>
+    </tr>
     {% endfor %}
 </table>
 </body>
