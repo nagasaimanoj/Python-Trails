@@ -2,7 +2,7 @@ from os.path import dirname
 
 from matplotlib.pyplot import plot, show, title
 from numpy import array, genfromtxt
-from sklearn.svm import SVC, OneClassSVM
+from sklearn.svm import OneClassSVM
 
 if __name__ == "__main__":
     DATA_SET_1 = array(
