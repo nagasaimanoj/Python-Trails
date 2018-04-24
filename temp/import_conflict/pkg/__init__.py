@@ -1,0 +1,1 @@
+print("this is frmo pkg.__init__.py")
