@@ -1,1 +1,1 @@
-print("this is frmo pkg.__init__.py")
+print("this is from pkg.__init__.py")

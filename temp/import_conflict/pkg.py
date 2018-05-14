@@ -1,1 +1,1 @@
-print("this is frmo pkg.py")
+print("this is from pkg.py")
