@@ -2,4 +2,4 @@
 .vscode/*
 .idea/*
 geckodriver.log
-temp/import_conflict/pkg/__pycache__/__init__.cpython-36.pyc
+*.pyc
