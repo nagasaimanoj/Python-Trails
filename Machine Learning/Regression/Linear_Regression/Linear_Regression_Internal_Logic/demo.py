@@ -1,28 +1,43 @@
+from numpy import genfromtxt, mean
+from matplotlib.pyplot import plot, scatter, show
 from os.path import dirname
 
-from numpy import (genfromtxt, mean)
 
-if __name__ == "__main__":
-    DATA_POINTS = genfromtxt(
-        dirname(__file__) + "\\" + "data.csv", delimiter=",")
+def print_details(intercept, slope, error):
+    print("intercept =", intercept)
+    print("slope =", slope)
+    print("error =", error)
 
-    data_intercept, data_slope = 0, 0
 
-    data_num_iterations = len(DATA_POINTS) * 10
+current_path = dirname(__file__)
+data_set = genfromtxt(current_path + "\\" + "data.csv", delimiter=",")
 
-    learning_rate = 1 / data_num_iterations / 10
+slope = 0
+intercept = 0
+initial_error = mean(data_set[:, 1] - (slope * data_set[:, 0] + intercept)**2)
 
-    for i in range(data_num_iterations):
-        avg_change = mean(2 / len(DATA_POINTS) * (
-                DATA_POINTS[:, 1] - data_slope * DATA_POINTS[:, 0] + data_intercept
-        ))
+print("\nInitial values :")
+print_details(intercept, slope, initial_error)
 
-        data_intercept += avg_change * learning_rate
+num_iterations = len(data_set) * 10
+learning_rate = 1 / (num_iterations * 10)
 
-        data_slope += sum(DATA_POINTS[:, 0]) * avg_change * learning_rate
+for i in range(num_iterations):
+    current_predection = (slope * data_set[:, 0]) + intercept
+    current_error = data_set[:, 1] - current_predection
 
-    print("intercept =", data_intercept)
-    print("slope =", data_slope)
-    print("average error =",
-          mean((DATA_POINTS[:, 1] -
-                (data_slope * DATA_POINTS[:, 0] + data_intercept)) ** 2))
+    xyz = 2 / len(data_set) * current_error
+    avg_change = mean(xyz)
+
+    intercept += avg_change * learning_rate
+
+    slope += (avg_change * sum(data_set[:, 0])) * learning_rate
+
+updated_error = mean(data_set[:, 1] - (slope * data_set[:, 0] + intercept))**2
+
+print("\nValues After", num_iterations, " itterations :")
+print_details(intercept, slope, updated_error)
+
+scatter(data_set[:, 0], data_set[:, 1])
+plot(data_set[:, 0], slope * data_set[:, 0] + intercept)
+show()
