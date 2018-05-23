@@ -1,43 +1,40 @@
 from numpy import genfromtxt, mean
-from matplotlib.pyplot import plot, scatter, show
 from os.path import dirname
+from matplotlib.pyplot import plot, scatter, show
 
 
-def print_details(intercept, slope, error):
-    print("intercept =", intercept)
-    print("slope =", slope)
-    print("error =", error)
+def print_values():
+    print("\tintercept =", b)
+    print("\tslope =", m)
+    print("\terror =", error)
 
 
-current_path = dirname(__file__)
-data_set = genfromtxt(current_path + "\\" + "data.csv", delimiter=",")
+current_dir = dirname(__file__)
+data_set = genfromtxt(current_dir + "/data.csv", delimiter=",")
 
-slope = 0
-intercept = 0
-initial_error = mean(data_set[:, 1] - (slope * data_set[:, 0] + intercept)**2)
+x = data_set[:, 0]
+y = data_set[:, 1]
+b = 0
+m = 0
 
-print("\nInitial values :")
-print_details(intercept, slope, initial_error)
+predected_y = m*x+b
+error = mean(y - predected_y)
+
+print_values()
+scatter(x, y)
 
 num_iterations = len(data_set) * 10
 learning_rate = 1 / (num_iterations * 10)
 
 for i in range(num_iterations):
-    current_predection = (slope * data_set[:, 0]) + intercept
-    current_error = data_set[:, 1] - current_predection
+    error = mean(y - (m*x+b))
+    avg_change = 2 / len(data_set) * error
+    correction = avg_change * learning_rate
 
-    xyz = 2 / len(data_set) * current_error
-    avg_change = mean(xyz)
+    b += correction
+    m += sum(x) * correction
 
-    intercept += avg_change * learning_rate
+print_values()
+plot(x, m*x+b)
 
-    slope += (avg_change * sum(data_set[:, 0])) * learning_rate
-
-updated_error = mean(data_set[:, 1] - (slope * data_set[:, 0] + intercept))**2
-
-print("\nValues After", num_iterations, " itterations :")
-print_details(intercept, slope, updated_error)
-
-scatter(data_set[:, 0], data_set[:, 1])
-plot(data_set[:, 0], slope * data_set[:, 0] + intercept)
 show()
