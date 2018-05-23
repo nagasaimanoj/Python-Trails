@@ -4,9 +4,9 @@ from matplotlib.pyplot import plot, scatter, show
 
 
 def print_values():
-    print("\tintercept =", b)
-    print("\tslope =", m)
-    print("\terror =", error)
+    print("intercept =", b)
+    print("slope =", m)
+    print("error =", error)
 
 
 current_dir = dirname(__file__)
