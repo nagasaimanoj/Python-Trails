@@ -2,7 +2,7 @@
 This repository contains my practice code for Python
 
 ### This contains code for
-* [Machine Learning](https://github.com/nagasaimanoj/Python_Practice/tree/master/Machine%20Learning)
+* [Machine Learning](tree/master/Machine%20Learning)
 * [Charts & Plotting](https://github.com/nagasaimanoj/Python_Practice/tree/master/Basics/Charts)
 * [Design Pattern](https://github.com/nagasaimanoj/Python_Practice/tree/master/Basics/Design_Patterns)
 * [File Handling](https://github.com/nagasaimanoj/Python_Practice/tree/master/Basics/Files)
