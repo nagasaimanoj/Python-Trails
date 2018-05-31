@@ -1,4 +1,5 @@
-import os, imp
+import imp
+import os
 
 
 def import_module(dir, name):

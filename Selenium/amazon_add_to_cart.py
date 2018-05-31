@@ -1,5 +1,6 @@
-from selenium.webdriver import Chrome
 import time
+
+from selenium.webdriver import Chrome
 
 driver = Chrome()
 

@@ -1,7 +1,7 @@
-from numpy import genfromtxt, mean
 from os.path import dirname
-from matplotlib.pyplot import plot, scatter, show
 
+from matplotlib.pyplot import plot, scatter, show
+from numpy import genfromtxt, mean
 
 current_dir = dirname(__file__)
 data_set = genfromtxt(current_dir + "/data.csv", delimiter=",")
