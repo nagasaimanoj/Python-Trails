@@ -1,13 +1,14 @@
 from xlrd import open_workbook
+from os.path import dirname
 
-excell_file = "E:/Manoj/Code/My Projects/Python_Practice/temp/sample_excel.xlsx"
+excell_file = dirname(__file__) + "/sample_excel.xlsx"
 
 wb = open_workbook(excell_file)
 
-for sheet in wb.sheets():
-    number_of_rows = sheet.nrows
-    number_of_columns = sheet.ncols
+for each_sheet in wb.sheets():
+    number_of_rows = each_sheet.nrows
+    number_of_columns = each_sheet.ncols
 
-    for row in range(1, number_of_rows):
-        for col in range(number_of_columns):
-            print(sheet.cell(row, col).value)
+    for each_row in range(1, number_of_rows):
+        for each_col in range(number_of_columns):
+            print(each_sheet.cell(each_row, each_col).value)
