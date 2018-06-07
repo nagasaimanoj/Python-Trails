@@ -1,11 +1,11 @@
-from xlrd import open_workbook
 from os.path import dirname
+import xlrd
 
-excell_file = dirname(__file__) + "/sample_excel.xlsx"
+input_file = dirname(__file__) + "/sample_excel.xlsx"
+input_workbook = xlrd.open_workbook(input_file)
 
-wb = open_workbook(excell_file)
 
-for each_sheet in wb.sheets():
+for each_sheet in input_workbook.sheets():
     number_of_rows = each_sheet.nrows
     number_of_columns = each_sheet.ncols
 
