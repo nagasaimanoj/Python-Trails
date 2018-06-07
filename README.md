@@ -1,7 +1,9 @@
 # Python_Practice
+
 This repository contains my practice code for Python
 
-### This contains code for
+## This contains sample code for
+
 * [Machine Learning](https://github.com/nagasaimanoj/Python_Practice/tree/master/Machine%20Learning)
   * [Anomaly_Detection](https://github.com/nagasaimanoj/Python_Practice/tree/master/Machine%20Learning/Anomaly_Detection)
   * [Regression](https://github.com/nagasaimanoj/Python_Practice/tree/master/Machine%20Learning/Regression)
@@ -20,6 +22,5 @@ This repository contains my practice code for Python
 * [Django](https://github.com/nagasaimanoj/Python_Practice/tree/master/Web%20Dev/Django) & [Flask](https://github.com/nagasaimanoj/Python_Practice/tree/master/Web%20Dev/Flask)
 * and some [Basic Programs](https://github.com/nagasaimanoj/Python_Practice/tree/master/Basics/Basic_Programs) & [Basic Syntax](https://github.com/nagasaimanoj/Python_Practice/tree/master/Basics/Basic_Syntax)
 
-
 ---
-mail me @ nagasai.g9@gmail.com
+contact me @ nagasai.g9@gmail.com
