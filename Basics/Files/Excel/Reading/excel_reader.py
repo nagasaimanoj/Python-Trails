@@ -1,7 +1,7 @@
 from os.path import dirname
 import xlrd
 
-input_file = dirname(__file__) + "/sample_excel.xlsx"
+input_file = dirname(__file__) + "/../sample_excel.xlsx"
 input_workbook = xlrd.open_workbook(input_file)
 
 
