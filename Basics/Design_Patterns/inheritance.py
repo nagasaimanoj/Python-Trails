@@ -16,14 +16,13 @@ class Zombie(Enemy):
         print('I am biting you!')
 
 
-if __name__ == "__main__":
-    enemy = Enemy()
-    enemy.move_left()
+enemy = Enemy()
+enemy.move_left()
 
-    ninja = Ninja()
-    ninja.move_left()
-    ninja.karate_chop()
+ninja = Ninja()
+ninja.move_left()
+ninja.karate_chop()
 
-    zombie = Zombie()
-    zombie.move_right()
-    zombie.bite()
+zombie = Zombie()
+zombie.move_right()
+zombie.bite()

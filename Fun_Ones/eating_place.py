@@ -14,9 +14,8 @@ def choose_a_place():
         print("go with option " + str(randint(1, options - 1)))
 
 
-if __name__ == "__main__":
-    while (True):
-        choose_a_place()
-        again = input("do you want to choose again..? (y/n) : ")
-        if (again == 'n'):
-            break
+while (True):
+    choose_a_place()
+    again = input("do you want to choose again..? (y/n) : ")
+    if (again == 'n'):
+        break

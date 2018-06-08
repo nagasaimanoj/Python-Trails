@@ -12,5 +12,4 @@ class child(parent2, parent1):
     pass
 
 
-if __name__ == "__main__":
-    obj = child()
+obj = child()

@@ -1,12 +1,11 @@
-if __name__ == "__main__":
-    num = int(input("enter a number : "))
+num = int(input("enter a number : "))
 
-    is_prime = True
+is_prime = True
 
-    for j in range(2, num):
+for j in range(2, num):
 
-        if (num % j == 0):
-            is_prime = False
-            break
+    if (num % j == 0):
+        is_prime = False
+        break
 
-    print(is_prime)
+print(is_prime)

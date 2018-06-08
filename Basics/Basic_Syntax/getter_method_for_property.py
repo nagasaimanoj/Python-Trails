@@ -12,12 +12,11 @@ class Pizza:
         self._pineapple_allowed = value
 
 
-if __name__ == "__main__":
-    pizza = Pizza(["cheese", "tomato"])
-    print(pizza.pineapple_allowed)
+pizza = Pizza(["cheese", "tomato"])
+print(pizza.pineapple_allowed)
 
-    pizza.pineapple_allowed = True
-    print(pizza.pineapple_allowed)
+pizza.pineapple_allowed = True
+print(pizza.pineapple_allowed)
 
-    pizza.pineapple_allowed = False
-    print(pizza.pineapple_allowed)
+pizza.pineapple_allowed = False
+print(pizza.pineapple_allowed)

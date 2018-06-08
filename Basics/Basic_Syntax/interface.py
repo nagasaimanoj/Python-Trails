@@ -14,14 +14,13 @@ class Dog(Animal):
         print("scooby")
 
 
-if __name__ == "__main__":
-    try:
-        object = Animal()
-        object.sound()
-        object.name()
-    except Exception as e:
-        print(e)
-
-    object = Dog()
+try:
+    object = Animal()
     object.sound()
     object.name()
+except Exception as e:
+    print(e)
+
+object = Dog()
+object.sound()
+object.name()

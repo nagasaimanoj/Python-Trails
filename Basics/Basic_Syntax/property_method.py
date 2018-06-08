@@ -7,7 +7,6 @@ class Pizza:
         return False
 
 
-if __name__ == "__main__":
-    pizza = Pizza(["cheese", "tomato"])
-    print(pizza.pineapple_allowed)
-    pizza.pineapple_allowed = True
+pizza = Pizza(["cheese", "tomato"])
+print(pizza.pineapple_allowed)
+pizza.pineapple_allowed = True

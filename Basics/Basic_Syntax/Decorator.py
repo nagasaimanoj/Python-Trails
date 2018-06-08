@@ -16,6 +16,5 @@ def myLogic(a, b):
     print(a + b)
 
 
-if __name__ == "__main__":
-    # calling in normal way. but decorator will get involved
-    myLogic(1, 2)
+# calling in normal way. but decorator will get involved
+myLogic(1, 2)

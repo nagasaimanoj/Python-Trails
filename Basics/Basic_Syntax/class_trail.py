@@ -3,5 +3,4 @@ class class_trail:
         print(float(x * y))
 
 
-if __name__ == "__main__":
-    class_trail(1, 2)
+class_trail(1, 2)

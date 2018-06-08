@@ -18,6 +18,5 @@ class Person():
         print(self.head.eye_color)
 
 
-if __name__ == "__main__":
-    bucky = Person('blue', 'blonde', 160)
-    bucky.print_eye_color()
+bucky = Person('blue', 'blonde', 160)
+bucky.print_eye_color()

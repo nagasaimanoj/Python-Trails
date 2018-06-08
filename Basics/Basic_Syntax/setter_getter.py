@@ -14,7 +14,6 @@ class Person:
         return self._val
 
 
-if __name__ == "__main__":
-    p = Person()
-    p.val = 30
-    print(p.val)
+p = Person()
+p.val = 30
+print(p.val)

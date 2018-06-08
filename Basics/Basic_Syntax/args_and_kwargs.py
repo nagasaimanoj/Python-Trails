@@ -5,5 +5,4 @@ def someLogic(var1, var2, *vars, **key_args):
     print(key_args)
 
 
-if __name__ == "__main__":
-    someLogic(1, 12, "manoj", "kumar", name="kumar", age="22")
+someLogic(1, 12, "manoj", "kumar", name="kumar", age="22")

@@ -11,7 +11,6 @@ class Pizza:
             return True
 
 
-if __name__ == "__main__":
-    ingredients = ["cheese", "onions", "spam"]
-    if all(Pizza.validate_topping(i) for i in ingredients):
-        pizza = Pizza(ingredients)
+ingredients = ["cheese", "onions", "spam"]
+if all(Pizza.validate_topping(i) for i in ingredients):
+    pizza = Pizza(ingredients)

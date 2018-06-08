@@ -23,7 +23,6 @@ class Gun(Weapon):
     cost = 300.00
 
 
-if __name__ == "__main__":
-    for _ in range(25):
-        w = Weapon.get_weapon(randrange(2))
-        print(w.name, w.cost)
+for _ in range(25):
+    w = Weapon.get_weapon(randrange(2))
+    print(w.name, w.cost)

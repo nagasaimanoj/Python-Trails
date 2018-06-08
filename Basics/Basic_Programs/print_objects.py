@@ -3,5 +3,4 @@ class SomeX:
         return "Hello World"
 
 
-if __name__ == '__main__':
-    print(SomeX())
+print(SomeX())

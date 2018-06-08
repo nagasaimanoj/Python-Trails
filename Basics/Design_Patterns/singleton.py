@@ -14,10 +14,9 @@ class Singleton():
         return cls.__instance
 
 
-if __name__ == "__main__":
-    a = Singleton()
+a = Singleton()
 
-    print('Creating instance', Singleton.get_instance())
+print('Creating instance', Singleton.get_instance())
 
-    b = Singleton()
-    c = Singleton()
+b = Singleton()
+c = Singleton()

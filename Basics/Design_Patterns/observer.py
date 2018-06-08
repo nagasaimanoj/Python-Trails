@@ -20,13 +20,12 @@ class Subscriber():
         print(self.username, 'received message:', message)
 
 
-if __name__ == "__main__":
-    publisher = Publisher()
+publisher = Publisher()
 
-    bucky = Subscriber('Bucky')
-    manoj = Subscriber('Manoj')
-    publisher.register(bucky)
-    publisher.register(manoj)
+bucky = Subscriber('Bucky')
+manoj = Subscriber('Manoj')
+publisher.register(bucky)
+publisher.register(manoj)
 
-    publisher.send_notifications('We updated the website')
-    publisher.send_notifications('Make sure to add a profile picture')
+publisher.send_notifications('We updated the website')
+publisher.send_notifications('Make sure to add a profile picture')

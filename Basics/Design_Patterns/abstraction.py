@@ -3,6 +3,5 @@ class Rectangle():
         return width * height
 
 
-if __name__ == "__main__":
-    area = Rectangle().calculate_area(height=5, width=7)
-    print(area)
+area = Rectangle().calculate_area(height=5, width=7)
+print(area)
