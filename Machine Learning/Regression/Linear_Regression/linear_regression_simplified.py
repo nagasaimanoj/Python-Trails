@@ -1,4 +1,4 @@
-from matplotlib.pyplot import (plot, scatter, show)
+from matplotlib.pyplot import plot, scatter, show
 from sklearn.linear_model import LinearRegression
 
 height = [[4.0], [4.5], [5.0], [5.2], [5.4], [5.8], [6.1], [6.2], [6.4], [6.8]]

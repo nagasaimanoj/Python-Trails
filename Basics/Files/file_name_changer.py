@@ -1,4 +1,4 @@
-from os import (listdir, rename)
+from os import listdir, rename
 
 for file_name in listdir():
     new_name = file_name[4:]

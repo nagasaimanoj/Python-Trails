@@ -1,4 +1,4 @@
-from tensorflow import (Session, add, constant, matmul, multiply, placeholder)
+from tensorflow import Session, add, constant, matmul, multiply, placeholder
 
 a = constant(2)
 b = constant(3)

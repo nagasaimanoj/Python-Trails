@@ -1,7 +1,7 @@
-from matplotlib.pyplot import (plot, scatter, show, xticks, yticks)
+from matplotlib.pyplot import plot, scatter, show, xticks, yticks
 from numpy import newaxis
-from sklearn import (datasets, linear_model)
-from sklearn.metrics import (mean_squared_error, r2_score)
+from sklearn import datasets, linear_model
+from sklearn.metrics import mean_squared_error, r2_score
 
 diabetes = datasets.load_diabetes()
 

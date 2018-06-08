@@ -1,4 +1,4 @@
-from re import (findall, match, search)
+from re import findall, match, search
 
 inpstrng = input("input string : ")
 

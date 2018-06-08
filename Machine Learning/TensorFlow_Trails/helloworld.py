@@ -1,4 +1,4 @@
-from tensorflow import (Session, constant)
+from tensorflow import Session, constant
 
 someX = constant("Hello, TensorFlow!")
 
