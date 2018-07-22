@@ -17,7 +17,7 @@ def after_requests(response):
     return response
 
 
-@app.route('/', methods=['GET'])
+@app.route('/')
 def home_page():
     return dumps(names)
 
