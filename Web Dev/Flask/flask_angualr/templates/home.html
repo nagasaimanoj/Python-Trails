@@ -6,16 +6,23 @@
     <script src="scripts.js"></script>
 </head>
 
-<body ng-app="myApp">
-    <div ng-controller="myCtrl">
-        <ul>
-            <li ng-repeat="x in names">{{x}}</li>
-        </ul>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <table>
+            <tr ng-repeat="x in names">
+                <td ng-bind="x.name">
+                </td>
+                <td ng-bind="x.age">
+                </td>
+                <td>
+                    <a href=" http://127.0.0.1:5000/delete?name={{x.name}} ">x</a>
+                </td>
+            </tr>
+        </table>
     </div>
-
-    <div ng-controller="urCtrl">
-        {{names}}
-    </div>
+    <form action='http://127.0.0.1:5000/delete'>
+        <input name='name' />
+    </form>
 </body>
 
 </html>
