@@ -6,14 +6,10 @@
     <script>
         var app = angular.module('myApp', []);
         app.controller('myCtrl', function ($scope, $http) {
-            $http({
-                method: "GET",
-                url: "http://localhost:5000"
-            }).then(function mySuccess(response) {
-                $scope.names = response.data;
-            }, function myError(response) {
-                $scope.names = response.statusText;
-            });
+            $http.get("http://localhost:5000")
+                .then(function (response) {
+                    $scope.names = response.data;
+                });
         });
     </script>
 </head>
