@@ -20,7 +20,3 @@ This repository contains my practice code for Python
 - [Selenium](https://github.com/nagasaimanoj/Python_Practice/tree/master/Selenium)
 - [Django](https://github.com/nagasaimanoj/Python_Practice/tree/master/Web%20Dev/Django) & [Flask](https://github.com/nagasaimanoj/Python_Practice/tree/master/Web%20Dev/Flask)
 - and some [Basic Programs](https://github.com/nagasaimanoj/Python_Practice/tree/master/Basics/Basic_Programs) & [Basic Syntax](https://github.com/nagasaimanoj/Python_Practice/tree/master/Basics/Basic_Syntax)
-
----
-
-contact me @ nagasai.g9@gmail.com
