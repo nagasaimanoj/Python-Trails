@@ -2,7 +2,7 @@
 
 This repository contains my practice code for Python
 
-## This contains sample code for
+### This contains sample code for
 
 - [Machine Learning](https://github.com/nagasaimanoj/Python_Practice/tree/master/Machine%20Learning)
   - [Anomaly_Detection](https://github.com/nagasaimanoj/Python_Practice/tree/master/Machine%20Learning/Anomaly_Detection)
