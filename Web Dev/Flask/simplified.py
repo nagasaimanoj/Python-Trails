@@ -8,4 +8,4 @@ def home_page():
     return "<h1>Hello Flask</h1>"
 
 
-app.run()
+app.run(host='0.0.0.0')
