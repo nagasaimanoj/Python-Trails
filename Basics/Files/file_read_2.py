@@ -1,6 +1,4 @@
-from os.path import dirname
-
-SAMPLE_FILE = open(dirname(__file__) + "/sample.txt", "r")
+SAMPLE_FILE = open("sample.txt", "r")
 print(SAMPLE_FILE.read(10))
 print(SAMPLE_FILE.tell())
 print(SAMPLE_FILE.read(10))

@@ -1,10 +1,8 @@
-from os.path import dirname
-
 import xlrd
 import xlwt
 
-input_file = dirname(__file__) + "/../sample_excel.xlsx"
-output_file = dirname(__file__) + "/output_excel.xls"
+input_file = "../sample_excel.xlsx"
+output_file = "output_excel.xls"
 
 input_workbook = xlrd.open_workbook(input_file)
 output_workbook = xlwt.Workbook()
