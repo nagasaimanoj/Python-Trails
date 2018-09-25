@@ -20,7 +20,7 @@ This repository contains my practice code for Python
 
 ### [Web Development](https://github.com/nagasaimanoj/Python-Practice/tree/master/Web%20Dev)
 - [Django](https://github.com/nagasaimanoj/Python-Practice/tree/master/Web%20Dev/Django_MySite)
-- [Flask](https://github.com/nagasaimanoj/Python-Practice/blob/master/Web%20Dev/Flask_Simplified.py)
+- [Flask](https://github.com/nagasaimanoj/Python-Practice/blob/master/Web%20Dev/Flask/simplified.py)
 
 ### [Charts](https://github.com/nagasaimanoj/Python-Practice/tree/master/Basics/Charts)
 ### [Temp](https://github.com/nagasaimanoj/Python-Practice/tree/master/temp)
