@@ -7,10 +7,8 @@ class myThread(Thread):
         self.id = threadID
 
     def run(self):
-        for _ in range(50):
-            for j in range(self.id):
-                print("     ", end=" ")
-            print(self.id)
+        while True:
+            print("     " * self.id, self.id)
 
 
 for i in range(10):
