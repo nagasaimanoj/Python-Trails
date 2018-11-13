@@ -4,6 +4,8 @@ conn = sqlite3.connect(':memory:')
 
 
 def create_db():
+    print('create db --------')
+
     conn.execute('''CREATE TABLE COMPANY
          (ID INT PRIMARY KEY     NOT NULL,
          NAME           TEXT    NOT NULL,
@@ -13,6 +15,8 @@ def create_db():
 
 
 def create():
+    print('create --------')
+
     conn.execute("INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) \
         VALUES (1, 'Paul', 32, 'California', 20000.00 )")
 
@@ -29,19 +33,23 @@ def create():
 
 
 def retrive():
+    print('retrive --------')
+
     cursor = conn.execute("SELECT id, name, address, salary from COMPANY")
     for row in cursor:
         print(row)
 
-    print('--------')
-
 
 def update():
+    print('update --------')
+
     conn.execute("UPDATE COMPANY set SALARY = 25000.00 where ID = 1")
     conn.commit
 
 
 def delete():
+    print('delete --------')
+
     conn.execute("DELETE from COMPANY where ID = 2;")
     conn.commit()
 
