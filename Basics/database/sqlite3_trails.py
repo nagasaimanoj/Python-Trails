@@ -33,6 +33,8 @@ def retrive():
     for row in cursor:
         print(row)
 
+    print('--------')
+
 
 def update():
     conn.execute("UPDATE COMPANY set SALARY = 25000.00 where ID = 1")
@@ -42,3 +44,15 @@ def update():
 def delete():
     conn.execute("DELETE from COMPANY where ID = 2;")
     conn.commit()
+
+
+create_db()
+
+create()
+retrive()
+
+update()
+retrive()
+
+delete()
+retrive()
