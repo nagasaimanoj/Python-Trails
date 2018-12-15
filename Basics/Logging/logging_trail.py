@@ -2,8 +2,10 @@ import logging
 
 # one time config. cant change in run-time
 logging.basicConfig(
+    format='%(asctime)s %(levelname)-8s %(message)s',  # log msg format
     # filename='example.log',  # to save logs to file
-    level=logging.DEBUG  # can set any int. default = WARNING(ie, 30)
+    level=logging.DEBUG,  # can set any int. default = WARNING(ie, 30)
+    datefmt='%Y-%m-%d %H:%M:%S'  # date-time format. only applicable for custom formats
 )
 
 """
