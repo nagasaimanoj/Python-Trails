@@ -1,0 +1,8 @@
+CRITICAL:root:something to log
+ERROR:root:something to log
+WARNING:root:something to log
+INFO:root:something to log
+DEBUG:root:something to log
+INFO:root:something to log
+Level 91:root:something to log
+DEBUG:root:something to log
