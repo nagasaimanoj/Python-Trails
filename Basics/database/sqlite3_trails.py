@@ -44,7 +44,7 @@ def update():
     print('update --------')
 
     conn.execute("UPDATE COMPANY set SALARY = 25000.00 where ID = 1")
-    conn.commit
+    conn.commit()
 
 
 def delete():
