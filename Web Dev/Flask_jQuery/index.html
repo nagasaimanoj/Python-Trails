@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        var get_table = function () {
+            $.get("http://localhost:80/project_details", function (response, status) {
+                response_json = JSON.parse(response);
+                var trHTML = "";
+
+                $.each(response_json, function (i, item) {
+                    console.log(item);
+                    trHTML += "<tr><td>" + item.name + "</td><td>" + item.url + "</td></tr>";
+                });
+
+                $("#projects").append(trHTML);
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="get_table()">load data</button>
+    <table id="projects" border="1"></table>
+</body>
+
+</html>
